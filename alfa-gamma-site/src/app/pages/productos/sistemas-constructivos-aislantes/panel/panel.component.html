@@ -1,0 +1,116 @@
+<app-menu></app-menu>
+
+<p-galleria [value]="images" [numVisible]="5" [circular]="true" [showThumbnails]="false">
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+        </ng-template>
+</p-galleria>
+
+
+<main id="main">
+    <section id="call-to-caseton" class="wow fadeIn">
+      <!--<div class="container text-center">
+        <a class="cta-btn" href="#">Call To Action</a>
+      </div>-->
+    </section><!-- #call-to-action -->
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="descripcionProducto">
+      <div class="container">
+        <app-wpp-floating></app-wpp-floating>
+        <header class="section-header wow fadeInUp">
+          <h3>Descripción del Producto</h3>
+        </header>
+        <div class="row mt-5">
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-arrow-down-right"></i></div>
+            <h4 class="title"><a href="">Ahorro</a></h4>
+            <p class="description">Permite ahorrar de un 10 a un 30% en costos de mano de obra y cimbra en comparación con los sistemas utilizados tradicionalmente (losa sólida, losa aligerada con barro, bloc, adobón, ladrillo, etc.)</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-box"></i></div>
+            <h4 class="title"><a href="">Versatilidad y Resistencia</a></h4>
+            <p class="description">En cada una de sus piezas les permiten adaptarse a cualquier diseño o cálculo minimizando el despercidio de material.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-sun"></i></div>
+            <h4 class="title"><a href="">Alta Protección Térmica</a></h4>
+            <p class="description">Lo cual es indispensable en zonas de temperatura térmica, lo cual provee confor y ahorro de energía empleada en refrigeración o calefacción en interiores.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-volume-off"></i></div>
+            <h4 class="title"><a href="">Alta Protección Acústica</a></h4>
+            <p class="description">Lo cual permite disminuir los ruidos exteriores, brindando mayor comodidad y privacidad en interiores (abosorbe de 25 a 30 decibeles según su acomodo).</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-cloud"></i></div>
+            <h4 class="title"><a href="">Ligereza</a></h4>
+            <p class="description">En cada una de sus piezas permite obtener ahorros en cimentación.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-directions"></i></div>
+            <h4 class="title"><a href="">Fácil manejo y rapidez</a></h4>
+            <p class="description">La ligereza y fácil manejo de sus piezas permiten trabajar con mayor limpieza y orden en la obra, ya que pueden ser estibadas y almacenadas con facilidad. Su rápida instalación es ideal para construcción de viviendas en serie.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+        <header class="section-header">
+          <h3>Aplicaciones del Producto</h3>
+        </header>
+
+        <div class="row about-cols justify-content-center mt-5">
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+              <div class="img">
+                <img src="../../../../../assets/images/productos/sistemas-constructivos-aislantes/panel/aplicaciones/panel3.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="about-col">
+              <div class="img">
+                <img src="../../../../../assets/images/productos/sistemas-constructivos-aislantes/panel/aplicaciones/panel8.jpg" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-list-outline"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="about-col">
+              <div class="img">
+                <img src="../../../../../assets/images/productos/sistemas-constructivos-aislantes/panel/aplicaciones/panel9.jpg" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-list-outline"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- #about -->
+    <section id="descripcionProducto">
+      <div class="container">
+        <header class="section-header wow fadeInUp">
+          <h3>Ficha Tecnica</h3>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
+            <p class="description">Descripción.
+            </p>
+          </div>
+
+        </div>
+        <div class="row">
+            <embed src="../../../../../assets/pdf/productos/sistemas-constructivos-aislantes/panel/FICHA TECNICA_PANEL_ALFA GAMMA.pdf" type="application/pdf" width="100%" height="600px" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+<app-footer></app-footer>

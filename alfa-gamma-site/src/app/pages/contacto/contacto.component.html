@@ -1,0 +1,131 @@
+<app-menu></app-menu>
+<main id="main">
+  <section id="descripcionProducto">
+    <div class="container">
+      <app-wpp-floating></app-wpp-floating>
+      <header class="section-header wow fadeInUp">
+        <h3>Envíanos un correo</h3>
+      </header>
+      <form #form="ngForm">
+        <div class="row mt-5">
+          <div class="p-fluid grid">
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <p-dropdown name="infoSolicitada" inputId="infoSolicitada" [autoDisplayFirst]="false"
+                  [options]="infoSoli" [(ngModel)]="contacto.infoSolicitada"
+                  optionLabel="name"></p-dropdown>
+                <label for="infoSolicitada">Información solicitada</label>
+              </span>
+            </div>
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <p-dropdown name="producto" inputId="productoSolicitado"
+                  [autoDisplayFirst]="false" [options]="productos"
+                  [(ngModel)]="contacto.producto" optionLabel="name"></p-dropdown>
+                <label for="productoSolicitado">Producto</label>
+              </span>
+            </div>
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <p-inputNumber name="cantidad" inputId="cantidad"
+                  [(ngModel)]="contacto.cantidad"></p-inputNumber>
+                <label for="cantidad">Cantidad aproximada</label>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="p-fluid grid">
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <input name="inputnombre" type="text" id="inputNombre" class="inputfield w-full"
+                  pInputText [(ngModel)]="contacto.nombre">
+                <label for="inputNombre">Nombre</label>
+              </span>
+            </div>
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <input name="apellidos" type="text" id="inputApellidos" class="inputfield w-full"
+                  pInputText [(ngModel)]="contacto.apellidos">
+                <label for="inputApellidos">Apellidos</label>
+              </span>
+            </div>
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <p-inputNumber name="telefono" inputId="notelefono"
+                  [(ngModel)]="contacto.telefono" mode="decimal"
+                  inputId="withoutgrouping" [useGrouping]="false">
+                </p-inputNumber>
+                <label for="notelefono">Teléfono</label>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="p-fluid grid">
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <input name="email" type="text" id="inputEmail" class="inputfield w-full"
+                  pInputText [(ngModel)]="contacto.email">
+                <label for="inputEmail">Correo electrónico</label>
+              </span>
+            </div>
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <p-dropdown name="sucursal" inputId="selectSucursal" [autoDisplayFirst]="false"
+                  [options]="sucursales" [(ngModel)]="contacto.sucursal"
+                  optionLabel="name"></p-dropdown>
+                <label for="selectSucursal">Sucursal</label>
+              </span>
+            </div>
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <p-dropdown name="estado" inputId="selectEstado" [autoDisplayFirst]="false"
+                  [options]="estados" [(ngModel)]="contacto.estado"
+                  optionLabel="name"></p-dropdown>
+                <label for="selectEstado">Estado</label>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="p-fluid grid">
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <p-dropdown name="selectciudad" inputId="selectCiudad" [autoDisplayFirst]="false"
+                  [options]="ciudades" [(ngModel)]="contacto.ciudad"
+                  optionLabel="name"></p-dropdown>
+                <label for="selectCiudad">Ciudad</label>
+              </span>
+            </div>
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <textarea name="direccion" id="textDireccion" [(ngModel)]="contacto.direccion"
+                  rows="3" cols="30" pInputTextarea></textarea>
+                <label for="textDireccion">Dirección</label>
+              </span>
+            </div>
+            <div class="col-12 md:col-4 mb-3">
+              <span class="p-float-label">
+                <textarea name="comentarios" id="textComentarios"
+                  [(ngModel)]="contacto.comentarios"
+                  rows="3" cols="30" pInputTextarea></textarea>
+                <label for="textComentarios">Comentarios</label>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="p-fluid grid justify-content-center">
+            <div class="col-6 md:col-3">
+              <button pButton pRipple type="submit" label="Enviar"
+                class="p-button-success" icon="pi pi-check" iconPos="right" (click)="send(form)"></button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

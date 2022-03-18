@@ -1,0 +1,91 @@
+<app-menu></app-menu>
+
+<p-galleria [value]="images" [numVisible]="5" [circular]="true" [showThumbnails]="false">
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+        </ng-template>
+</p-galleria>
+
+
+<main id="main">
+    <section id="call-to-caseton" class="wow fadeIn">
+      <!--<div class="container text-center">
+        <a class="cta-btn" href="#">Call To Action</a>
+      </div>-->
+    </section><!-- #call-to-action -->
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="descripcionProducto">
+      <div class="container">
+        <app-wpp-floating></app-wpp-floating>
+        <header class="section-header wow fadeInUp">
+          <h3>Descripción del Producto</h3>
+        </header>
+        <div class="row mt-5">
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-shield"></i></div>
+            <h4 class="title"><a href="">Seguridad</a></h4>
+            <p class="description">Al estar constituidos de poliestireno tienen la propiedad de ser autoextinguibles al entrar en contacto con el fuego.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-ban"></i></div>
+            <h4 class="title"><a href="">Nula absorción al agua</a></h4>
+            <p class="description">La gran capacidad de las piezas DECORAK® para resistir la humedad evita que los plafones se deformen o manchen al entrar en contacto con el agua.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-directions"></i></div>
+            <h4 class="title"><a href="">Fácil manejo y rapidez de instalación</a></h4>
+            <p class="description">Su gran resistencia y ligereza les permite ser instalados con facilidad logrando un mínimo desperdicio de piezas a diferencia de otros plafones. Además de proporcionar belleza, los plafones ofrecen aislamiento acústico y gran reflectividad de la luz en interiores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <header class="section-header">
+          <h3>Aplicaciones del Producto</h3>
+        </header>
+
+        <div class="row about-cols justify-content-center mt-5">
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+              <div class="img">
+                <img src="../../../../../assets/images/productos/decorativos/plafon/aplicaciones/plafon1.JPG" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+              <div class="img">
+                <img src="../../../../../assets/images/productos/decorativos/plafon/aplicaciones/plafon2.JPG" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="descripcionProducto">
+      <div class="container">
+        <header class="section-header wow fadeInUp">
+          <h3>Ficha Tecnica</h3>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
+            <p class="description">Descripción.
+            </p>
+          </div>
+
+        </div>
+        <div class="row">
+            <embed src="../../../../../assets/pdf/productos/decorativos/plafon/FICHA TECNICA_DECORAK PLAFON_ALFA GAMMA.pdf" type="application/pdf" width="100%" height="600px" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+<app-footer></app-footer>

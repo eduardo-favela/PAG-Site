@@ -1,0 +1,108 @@
+/* Sections Header
+--------------------------------*/
+.section-header {
+    padding-inline: 15%;
+}
+
+.section-header h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    color: #111;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+    /*margin-top: 25px;  QUITARLE SEPARACCION TITULOS  */
+  }
+
+  .section-header h3::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+  }
+
+  .section-header h3::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #9d162e; /* #18d26e;*/
+    bottom: 0;
+    left: calc(50% - 20px);
+  }
+
+  .section-header p {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    padding-bottom: 30px;
+    color: #333;
+  }
+
+
+  /*Card Multicolor */
+#team img{
+    /* margin-top: -50px; */
+    border-radius: 10px;
+  }
+
+  #team i{
+    font-size: 26px;
+    color: #555;
+  }
+
+  #team .card{
+    height: 100%;
+    border-radius: 0;
+    box-shadow: 5px 5px 15px #2b2727;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3 ease-in;
+  }
+
+  #team h3{
+    margin-top: 10px;
+  }
+
+  #team .card:hover{
+    background: #af0d0d;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 10px #9E9E9E;
+  }
+
+  #team .card:hover h3, #team .card:hover i ,.pCard:hover{
+    color: #fff;
+    margin-top: 10px;
+  }
+
+  /*VIDEO*/
+
+.v-container{
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+  }
+
+  .v-container iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  p, h3{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }

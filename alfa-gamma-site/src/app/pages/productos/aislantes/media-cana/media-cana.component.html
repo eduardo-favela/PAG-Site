@@ -1,0 +1,81 @@
+<app-menu></app-menu>
+
+<p-galleria [value]="images" [numVisible]="5" [circular]="true" [showThumbnails]="false">
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+        </ng-template>
+</p-galleria>
+
+
+<main id="main">
+    <section id="call-to-caseton" class="wow fadeIn">
+      <!--<div class="container text-center">
+        <a class="cta-btn" href="#">Call To Action</a>
+      </div>-->
+    </section><!-- #call-to-action -->
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="descripcionProducto">
+      <div class="container">
+        <app-wpp-floating></app-wpp-floating>
+        <header class="section-header wow fadeInUp mb-5">
+          <h3>Descripción del Producto</h3>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-6 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-box"></i></div>
+            <h4 class="title"><a href="">Versátil</a></h4>
+            <p class="description">La versatilidad de la MEDIA CAÑA ALFATERM™ le permite ser empleada como aislante térmico en tubería de todo tipo de fluidos.
+              <br/><br/>
+            Es ampliamente utilizada en el ramo de la construcción, restaurantes y clubes deportivos que requieren mantener un nivel óptimo en la temperatura interior de cuartos y tuberías.
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-th-large"></i></div>
+            <h4 class="title"><a href="">Principales usos</a></h4>
+            <p class="description">Es utilizada como aislante térmico en tuberías de agua, gases y todo tipo de fluidos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container mb-5">
+        <header class="section-header mb-5">
+          <h3>Aplicaciones del Producto</h3>
+        </header>
+
+        <div class="row about-cols">
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+              <div class="img">
+                <img src="../../../../../assets/images/productos/aislantes/media-cana/aplicaciones/mediaCana1.png" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="about-col">
+              <div class="img">
+                <img src="../../../../../assets/images/productos/aislantes/media-cana/aplicaciones/mediaCana2.png" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-list-outline"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="about-col">
+              <div class="img">
+                <img src="../../../../../assets/images/productos/aislantes/media-cana/aplicaciones/mediaCana3.png" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-list-outline"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- #about -->
+  </main>
+
+<app-footer></app-footer>

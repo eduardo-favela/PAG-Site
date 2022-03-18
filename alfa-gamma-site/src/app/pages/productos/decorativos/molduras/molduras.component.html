@@ -1,0 +1,87 @@
+<app-menu></app-menu>
+
+<p-galleria [value]="images" [numVisible]="5" [circular]="true" [showThumbnails]="false">
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+        </ng-template>
+</p-galleria>
+
+
+<main id="main">
+    <section id="call-to-caseton" class="wow fadeIn">
+      <!--<div class="container text-center">
+        <a class="cta-btn" href="#">Call To Action</a>
+      </div>-->
+    </section><!-- #call-to-action -->
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="descripcionProducto">
+      <div class="container">
+        <app-wpp-floating></app-wpp-floating>
+        <header class="section-header wow fadeInUp">
+          <h3>Descripción del Producto</h3>
+        </header>
+        <div class="row mt-5">
+          <div class="col-lg-6 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-book"></i></div>
+            <h4 class="title"><a href="">Descripción</a></h4>
+            <p class="description">Las molduras de Alfa-Gamma proporcionan belleza para los acabados de fechada de tu obra.</p>
+          </div>
+          <div class="col-lg-6 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-briefcase"></i></div>
+            <h4 class="title"><a href="">Instalación</a></h4>
+            <p class="description">Se puede instalar de dos maneras, como molde y directo.</p>
+          </div>
+          <div class="col-lg-6 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-clone"></i></div>
+            <h4 class="title"><a href="">Instalación molde</a></h4>
+            <p class="description">1. Se instala la cimbra, luego se coloca la moldura cuidando que la alineación sea perfecta en ambos lados.<br/>
+            2.  La moldura es tratada con aceite quemado, evitando que se adhiera al vaciado y verificando que la moldura no se mueva de lugar.<br/>
+            3.  Se efectúa el vaciado, procurando que la moldura no se mueva en el transcurso del mismo.<br/>
+            4.  Una vez realizada la fase de colado y fraguado, se quita la cimbra y se retira la moldura, dejando un excelente acabado en forma rápida, fácil y económica.
+            .</p>
+          </div>
+          <div class="col-lg-6 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><i class="pi pi-step-forward"></i></div>
+            <h4 class="title"><a href="">Instalación directa</a></h4>
+            <p class="description">En este caso la instalación se realiza poniendo pegamento y colocando un sujetador mecánico sobre el muro, para que se adhiera firmemente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <header class="section-header">
+          <h3>Aplicaciones del Producto</h3>
+        </header>
+
+        <div class="row about-cols justify-content-center mt-5 mb-5">
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+              <div class="img">
+                <img src="../../../../../assets/images/productos/decorativos/molduras/aplicaciones/molduras1.png" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+              <div class="img">
+                <img src="../../../../../assets/images/productos/decorativos/molduras/aplicaciones/molduras3.png" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 wow fadeInUp">
+            <div class="about-col">
+              <div class="img">
+                <img src="../../../../../assets/images/productos/decorativos/molduras/aplicaciones/molduras7.png" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<app-footer></app-footer>

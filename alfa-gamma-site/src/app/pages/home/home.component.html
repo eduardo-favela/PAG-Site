@@ -1,0 +1,75 @@
+<app-menu></app-menu>
+
+<p-galleria [value]="images" [numVisible]="5" [circular]="true"
+        [autoPlay]="true" [transitionInterval]="10000" [showThumbnails]="false" [showIndicators]="true" [changeItemOnIndicatorHover]="true" [showIndicatorsOnItem]="true">
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+        </ng-template>
+</p-galleria>
+
+<section id="team">
+  <app-wpp-floating></app-wpp-floating>
+  <div class="container my-3 py-5 text-center">
+    <header class="section-header">
+      <h3>Quienes Somos</h3>
+      <p>
+        Poliestireno Alfa Gamma es una empresa Mexicana con cobertura en todo México y California USA que cuenta con una gran experiencia, líder en la fabricación de productos termoplasticos de la mas alta calidad y con la mejor tecnología. Estamos presentes en diversos mercados de la industria como lo son: construcción, industria manufacturera, cadenas de alimentos, agricultura, electronica, entre otros.
+        Su facil manejo, ligeresa y propiedades aislantes termoacusticas lo hace un producto versatil para todas y cada una de las necesidas del mercado.
+      </p>
+    </header>
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="card" id="separadoDiv">
+          <div class="card-body">
+            <img src="../../../assets/images/empresa/vision.png" alt="" class="img-fluid"> <!--class="img-fluid rounded-circle w-70 mb-3"-->
+            <!-- <h3>Visión</h3> -->
+            <p class="pCard">
+              Ser un grupo que se distingue internacionalmente por el nivel de calidad, rentabilidad y eficiencia en sus productos y servicios.
+              <br/><br/><br/>
+              <br/><br/><br/><br/>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" id="separadoDiv">
+        <div class="card" id="separadoDiv">
+          <div class="card-body">
+            <img src="../../../assets/images/empresa/mision.png" alt="Mision" class="img-fluid">
+            <!-- <h3>Misión</h3> -->
+            <p class="pCard">
+              Satisfacer las necesidades de nuestros clientes con productos de poliestireno expendido y otros plásticos de calidad. Brindando bienestar personal y rentabilidad a los accionistas, en armonía con proveedores, medio ambiente y sociedad.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" id="separadoDiv">
+        <div class="card" id="separadoDiv">
+          <div class="card-body">
+            <img src="../../../assets/images/empresa/valores.png" alt="Valores" class="img-fluid">
+            <!-- <h3>Valores</h3> -->
+            <p class="pCard">
+              - Honestidad,<br/>
+              - Respeto,<br/>
+              - Tolerancia,<br/>
+              - Actitud de servicio,<br/>
+              - Trabajo en equipo,<br/>
+              - Creatividad
+              <br/>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="section-bg wow fadeInUp">
+  <header class="section-header">
+    <h3>VIDEO</h3>
+  </header>
+  <div class="v-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qxHTsfVpRTM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</section>
+
+<app-footer></app-footer>
