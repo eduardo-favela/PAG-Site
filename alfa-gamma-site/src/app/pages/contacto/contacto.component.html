@@ -11,115 +11,151 @@
           <div class="p-fluid grid">
             <div class="col-12 md:col-4 mb-3">
               <span class="p-float-label">
-                <p-dropdown name="infoSolicitada" inputId="infoSolicitada" [autoDisplayFirst]="false"
+                <p-dropdown [disabled]="loading" name="infoSolicitada"
+                  [autoDisplayFirst]="false"
                   [options]="infoSoli" [(ngModel)]="contacto.infoSolicitada"
-                  optionLabel="name"></p-dropdown>
+                  optionLabel="field"
+                  optionValue="id" id="infoSoliSelect" (onChange)="infoSelected()"></p-dropdown>
                 <label for="infoSolicitada">Información solicitada</label>
               </span>
             </div>
             <div class="col-12 md:col-4 mb-3">
               <span class="p-float-label">
-                <p-dropdown name="producto" inputId="productoSolicitado"
+                <p-dropdown [disabled]="loading" name="producto"
                   [autoDisplayFirst]="false" [options]="productos"
-                  [(ngModel)]="contacto.producto" optionLabel="name"></p-dropdown>
+                  [(ngModel)]="contacto.productoSelected" optionLabel="field"
+                  optionValue="id" id="productoSelect" (onChange)="productoSelected()"></p-dropdown>
                 <label for="productoSolicitado">Producto</label>
               </span>
             </div>
-            <div class="col-12 md:col-4 mb-3">
+            <div class="col-6 md:col-2 mb-3">
               <span class="p-float-label">
-                <p-inputNumber name="cantidad" inputId="cantidad"
-                  [(ngModel)]="contacto.cantidad"></p-inputNumber>
+                <p-inputNumber [disabled]="loading" name="cantidad" id="cantidadInput"
+                  [(ngModel)]="contacto.cantidad" mode="decimal"
+                  [useGrouping]="false" (ngModelChange)="cantidadInput()">
+                </p-inputNumber>
+                <!-- <input type="text" name="cantidad" class="inputfield w-full" pInputText
+                  [(ngModel)]="contacto.cantidad" id="cantidadInput" (ngModelChange)="cantidadInput()"> -->
                 <label for="cantidad">Cantidad aproximada</label>
+              </span>
+            </div>
+            <div class="col-6 md:col-2 mb-3">
+              <span class="p-float-label">
+                <p-dropdown [disabled]="loading" name="uMedida"
+                  [autoDisplayFirst]="false" [options]="unidadesMedida"
+                  [(ngModel)]="contacto.uMedida" optionLabel="field"
+                  optionValue="id" id="uMedidaSelect" (onChange)="uMedidaSelect()"></p-dropdown>
+                <label for="uMedidaSelect">Unidad de Medida</label>
               </span>
             </div>
           </div>
         </div>
         <div class="row mt-2">
           <div class="p-fluid grid">
-            <div class="col-12 md:col-4 mb-3">
+            <div class="col-12 md:col-3 mb-3">
               <span class="p-float-label">
-                <input name="inputnombre" type="text" id="inputNombre" class="inputfield w-full"
-                  pInputText [(ngModel)]="contacto.nombre">
+                <input [disabled]="loading" name="inputnombre" type="text" id="inputNombre"
+                  class="inputfield w-full"
+                  pInputText [(ngModel)]="contacto.nombre" (ngModelChange)="nombreInput()">
                 <label for="inputNombre">Nombre</label>
               </span>
             </div>
-            <div class="col-12 md:col-4 mb-3">
+            <div class="col-12 md:col-3 mb-3">
               <span class="p-float-label">
-                <input name="apellidos" type="text" id="inputApellidos" class="inputfield w-full"
-                  pInputText [(ngModel)]="contacto.apellidos">
+                <input [disabled]="loading" name="apellidos" type="text" id="inputApellidos"
+                  class="inputfield w-full"
+                  pInputText [(ngModel)]="contacto.apellidos" (ngModelChange)="apellidosInput()">
                 <label for="inputApellidos">Apellidos</label>
               </span>
             </div>
-            <div class="col-12 md:col-4 mb-3">
+            <div class="col-12 md:col-3 mb-3">
               <span class="p-float-label">
-                <p-inputNumber name="telefono" inputId="notelefono"
+                <p-inputNumber [disabled]="loading" name="telefono" id="notelefono"
                   [(ngModel)]="contacto.telefono" mode="decimal"
-                  inputId="withoutgrouping" [useGrouping]="false">
+                  inputId="withoutgrouping" [useGrouping]="false" (ngModelChange)="telefonoInput()">
                 </p-inputNumber>
                 <label for="notelefono">Teléfono</label>
               </span>
             </div>
+            <div class="col-12 md:col-3 mb-3">
+              <span class="p-float-label">
+                <input [disabled]="loading" name="empresa" type="text" id="inputEmpresa"
+                  class="inputfield w-full"
+                  pInputText [(ngModel)]="contacto.empresa" (ngModelChange)="empresaInput()">
+                <label for="inputEmpresa">Empresa</label>
+              </span>
+            </div>
           </div>
         </div>
         <div class="row mt-2">
           <div class="p-fluid grid">
-            <div class="col-12 md:col-4 mb-3">
+            <div class="col-12 md:col-3 mb-3">
               <span class="p-float-label">
-                <input name="email" type="text" id="inputEmail" class="inputfield w-full"
-                  pInputText [(ngModel)]="contacto.email">
+                <input [disabled]="loading" name="email" type="text" id="inputEmail"
+                  class="inputfield w-full"
+                  pInputText [(ngModel)]="contacto.email" (ngModelChange)="emailInput()">
                 <label for="inputEmail">Correo electrónico</label>
               </span>
             </div>
-            <div class="col-12 md:col-4 mb-3">
+            <div class="col-12 md:col-3 mb-3">
               <span class="p-float-label">
-                <p-dropdown name="sucursal" inputId="selectSucursal" [autoDisplayFirst]="false"
-                  [options]="sucursales" [(ngModel)]="contacto.sucursal"
-                  optionLabel="name"></p-dropdown>
-                <label for="selectSucursal">Sucursal</label>
+                <p-dropdown [disabled]="loading" name="estado" id="selectEstado"
+                  [autoDisplayFirst]="false"
+                  [options]="estados" [(ngModel)]="contacto.estado"
+                  optionLabel="field"
+                  optionValue="id" (onChange)="estadoSelected()"></p-dropdown>
+                <label for="selectEstado">Estado</label>
               </span>
             </div>
-            <div class="col-12 md:col-4 mb-3">
+            <div class="col-12 md:col-3 mb-3">
               <span class="p-float-label">
-                <p-dropdown name="estado" inputId="selectEstado" [autoDisplayFirst]="false"
-                  [options]="estados" [(ngModel)]="contacto.estado"
-                  optionLabel="name"></p-dropdown>
-                <label for="selectEstado">Estado</label>
+                <p-dropdown [disabled]="loading" name="selectciudad" id="selectCiudad"
+                  [autoDisplayFirst]="false"
+                  [options]="ciudades" [(ngModel)]="contacto.ciudad"
+                  optionLabel="field"
+                  optionValue="id" (onChange)="ciudadSelected()"></p-dropdown>
+                <label for="selectCiudad">Ciudad</label>
+              </span>
+            </div>
+            <div class="col-12 md:col-3 mb-3">
+              <span class="p-float-label">
+                <p-dropdown [disabled]="loading" name="sucursal" id="selectSucursal"
+                  [autoDisplayFirst]="false"
+                  [options]="sucursales" [(ngModel)]="contacto.sucursal"
+                  optionLabel="field"
+                  optionValue="id" (onChange)="sucursalSelected()"></p-dropdown>
+                <label for="selectSucursal">Sucursal</label>
               </span>
             </div>
           </div>
         </div>
         <div class="row mt-2">
-          <div class="p-fluid grid">
-            <div class="col-12 md:col-4 mb-3">
+          <div class="p-fluid grid justify-content-around">
+            <div class="col-12 md:col-6">
               <span class="p-float-label">
-                <p-dropdown name="selectciudad" inputId="selectCiudad" [autoDisplayFirst]="false"
-                  [options]="ciudades" [(ngModel)]="contacto.ciudad"
-                  optionLabel="name"></p-dropdown>
-                <label for="selectCiudad">Ciudad</label>
-              </span>
-            </div>
-            <div class="col-12 md:col-4 mb-3">
-              <span class="p-float-label">
-                <textarea name="direccion" id="textDireccion" [(ngModel)]="contacto.direccion"
-                  rows="3" cols="30" pInputTextarea></textarea>
+                <textarea maxlength = "60" [disabled]="loading" name="direccion" id="textDireccion"
+                  [(ngModel)]="contacto.direccion"
+                  rows="3" cols="30" pInputTextarea (ngModelChange)="direccionInput()"></textarea>
                 <label for="textDireccion">Dirección</label>
               </span>
             </div>
-            <div class="col-12 md:col-4 mb-3">
+            <div class="col-12 md:col-6">
               <span class="p-float-label">
-                <textarea name="comentarios" id="textComentarios"
+                <textarea maxlength = "60" [disabled]="loading" name="comentarios" id="textComentarios"
                   [(ngModel)]="contacto.comentarios"
-                  rows="3" cols="30" pInputTextarea></textarea>
+                  rows="3" cols="30" pInputTextarea (ngModelChange)="comentariosInput()"></textarea>
                 <label for="textComentarios">Comentarios</label>
               </span>
             </div>
           </div>
         </div>
-        <div class="row mb-4">
+        <div class="row mt-4 mb-3">
           <div class="p-fluid grid justify-content-center">
-            <div class="col-6 md:col-3">
-              <button pButton pRipple type="submit" label="Enviar"
-                class="p-button-success" icon="pi pi-check" iconPos="right" (click)="send(form)"></button>
+            <div class="col-8 md:col-3" style="text-align: center;">
+              <i [hidden]="!loading" class="pi pi-spin pi-sync mb-3" style="font-size: xx-large;color: #d13138;"></i>
+              <button [disabled]="loading" pButton pRipple type="submit" label="Enviar"
+                class="p-button-success" icon="pi pi-check" iconPos="right"
+                (click)="send(form)"></button>
             </div>
           </div>
         </div>
@@ -129,3 +165,35 @@
 </main>
 
 <app-footer></app-footer>
+
+<!--DIALOG DE REGISTRO COMPLETO-->
+<p-dialog header="Información enviada" [(visible)]="displayPosition" position="top" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+    <p-messages severity="success">
+      <ng-template pTemplate>
+          <i class="pi pi-check-circle" style="font-size: x-large;color: forestgreen;"></i>
+          <div class="ml-3">La información se envió correctamente, una persona pronto se pondrá en contacto con usted
+            por alguno de los medios que proporcionó
+          </div>
+      </ng-template>
+    </p-messages>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="displayPosition=false" label="Cerrar" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
+
+<!--DIALOG DE ERROR DE REGISTRO-->
+<p-dialog header="Error" [(visible)]="displayDialogError" position="top" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+    <p-messages severity="error">
+      <ng-template pTemplate>
+          <i class="pi pi-times-circle" style="font-size: x-large;color: red;"></i>
+          <div class="ml-3">
+            Algunos campos son incorrectos
+          </div>
+      </ng-template>
+    </p-messages>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-times" (click)="displayDialogError=false" label="Cerrar" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>

@@ -1,0 +1,10 @@
+@api = http://localhost:3000
+
+GET {{api}}/getSelectInfo
+
+POST {{api}}
+Content-Type: application/json
+
+{
+    "estadoid":5
+}

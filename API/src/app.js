@@ -1,13 +1,9 @@
 import express from 'express';
 import cors from 'cors'
 import morgan from 'morgan'
-import {options} from './swaggerOptions'
-import swaggerJSDoc from 'swagger-jsdoc'
-import swaggerUI from 'swagger-ui-express'
 
-const specs = swaggerJSDoc(options)
-
-import tasksRoutes from './routes/tasks'
+import contactoRoutes from './routes/contacto'
+import ubicacionRoutes from './routes/ubicacion'
 
 const app = express();
 
@@ -15,7 +11,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
-app.use(tasksRoutes);
-app.use('/docs',swaggerUI.serve,swaggerUI.setup(specs));
+app.use('/api/contacto',contactoRoutes);
+app.use('/api/ubicacion',ubicacionRoutes);
 
 export default app

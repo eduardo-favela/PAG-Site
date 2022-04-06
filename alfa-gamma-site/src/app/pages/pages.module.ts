@@ -21,7 +21,16 @@ import { CasetonComponent } from './productos/aligerantes/caseton/caseton.compon
 import { InsertosBlockComponent } from './productos/aligerantes/insertos-block/insertos-block.component';
 import { PerlitaComponent } from './productos/aligerantes/perlita/perlita.component';
 import { TooltipModule } from 'primeng/tooltip';
-import {Table, TableModule} from 'primeng/table'
+import {Table, TableModule} from 'primeng/table';
+import {VirtualScrollerModule} from 'primeng/virtualscroller';
+import {FieldsetModule} from 'primeng/fieldset';
+import {AccordionModule} from 'primeng/accordion';
+import {ScrollPanelModule} from 'primeng/scrollpanel';
+import {ListboxModule} from 'primeng/listbox';
+import {DividerModule} from 'primeng/divider';
+import {DialogModule} from 'primeng/dialog';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 import * as $ from 'jquery';
 import { CuboIntegradoComponent } from './productos/aislantes/cubo-integrado/cubo-integrado.component';
@@ -88,7 +97,16 @@ import { environment } from '../../environments/environment';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA6y3xHJ8MSQbsXah3d-qG0Vid9R7jovBA'
     }),
-    TableModule
+    TableModule,
+    VirtualScrollerModule,
+    FieldsetModule,
+    AccordionModule,
+    ScrollPanelModule,
+    ListboxModule,
+    DividerModule,
+    DialogModule,
+    MessageModule,
+    MessagesModule
   ],
   exports: [
     HomeComponent,
