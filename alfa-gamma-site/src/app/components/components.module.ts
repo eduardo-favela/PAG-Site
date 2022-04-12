@@ -13,7 +13,7 @@ import { WppFloatingComponent } from './wpp-floating/wpp-floating.component';
   declarations: [
     MenuComponent,
     FooterComponent,
-    WppFloatingComponent
+    WppFloatingComponent,
   ],
   imports: [
     BrowserModule,

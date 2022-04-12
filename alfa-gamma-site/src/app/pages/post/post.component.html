@@ -1,0 +1,34 @@
+<main id="main">
+  <section id="descripcionProducto">
+    <div class="container">
+      <app-wpp-floating></app-wpp-floating>
+      <header class="section-header wow fadeInUp">
+        <h3>{{post.titulo}}</h3>
+      </header>
+      <div class="row pt-3 flex justify-content-center">
+        <div class="p-fluid grid">
+          <div class="col-3 md:col-2 mb-3">
+            <button routerLink="/blog" pButton pRipple type="button" icon="pi pi-chevron-left"
+              class="p-button-rounded p-button-danger" label="Volver al blog"></button>
+          </div>
+        </div>
+      </div>
+      <div class="row p-5 flex justify-content-around"
+        [style]="{'border-radius':'1.5rem','background':'url(../../assets/images/post-page/post-background.jpg)'}">
+        <div class="col-6 md:col-6 mb-3 flex justify-content-center">
+          <p-card [style]="{'border-radius':'1rem'}">
+            <p-image [src]="post.imagen" alt="Image" width="500"
+              [preview]="true"></p-image>
+            <ng-template pTemplate="footer">
+              <p [style]="{'font-style': 'italic','font-family': 'monospace'}">{{post.fecha | date : 'dd/MM/yyyy'}}</p>
+            </ng-template>
+          </p-card>
+        </div>
+        <div class="col-4 md:col-4 mb-3 p-4" [style]="{'background': '#ffffff','border-radius': '1.5rem','opacity': '80%'}">
+          <p>{{post.contenido}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<app-footer></app-footer>

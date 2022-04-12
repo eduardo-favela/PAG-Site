@@ -50,10 +50,9 @@ import { FormsModule } from '@angular/forms';
 import { ContactoComponent } from './contacto/contacto.component';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 import { environment } from '../../environments/environment';
-
-
-
-
+import { BlogComponent } from './blog/blog.component';
+import { PostComponent } from './post/post.component';
+import {ImageModule} from 'primeng/image';
 
 @NgModule({
   declarations: [
@@ -74,7 +73,9 @@ import { environment } from '../../environments/environment';
     HieleraComponent,
     AlfaboxComponent,
     UbicacionContactoComponent,
-    ContactoComponent
+    ContactoComponent,
+    BlogComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -106,7 +107,8 @@ import { environment } from '../../environments/environment';
     DividerModule,
     DialogModule,
     MessageModule,
-    MessagesModule
+    MessagesModule,
+    ImageModule
   ],
   exports: [
     HomeComponent,

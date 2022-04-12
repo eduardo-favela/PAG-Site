@@ -17,6 +17,8 @@ import { MoldurasComponent } from './pages/productos/decorativos/molduras/moldur
 import { HieleraComponent } from './pages/productos/cadena-fria/hielera/hielera.component';
 import { UbicacionContactoComponent } from './pages/ubicacion-contacto/ubicacion-contacto.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { PostComponent } from './pages/post/post.component'
 
 const routes: Routes = [
   {
@@ -36,56 +38,64 @@ const routes: Routes = [
     component: InsertosBlockComponent
   },
   {
-    path:'aislantes/cubo-integrado',
-    component:CuboIntegradoComponent
+    path: 'aislantes/cubo-integrado',
+    component: CuboIntegradoComponent
   },
   {
-    path:'aislantes/media-cana',
-    component:MediaCanaComponent
+    path: 'aislantes/media-cana',
+    component: MediaCanaComponent
   },
   {
-    path:'aislantes/r-shield',
-    component:RShieldComponent
+    path: 'aislantes/r-shield',
+    component: RShieldComponent
   },
   {
-    path:'sistemas-constructivos-aislantes/panel',
-    component:PanelComponent
+    path: 'sistemas-constructivos-aislantes/panel',
+    component: PanelComponent
   },
   {
-    path:'sistemas-constructivos-aislantes/geosystem',
-    component:GeosystemComponent
+    path: 'sistemas-constructivos-aislantes/geosystem',
+    component: GeosystemComponent
   },
   {
-    path:'sistemas-constructivos-aislantes/bovedilla-e',
-    component:BovedillaEComponent
+    path: 'sistemas-constructivos-aislantes/bovedilla-e',
+    component: BovedillaEComponent
   },
   {
-    path:'sistemas-constructivos-aislantes/bovedilla-aa',
-    component:BovedillaAaComponent
+    path: 'sistemas-constructivos-aislantes/bovedilla-aa',
+    component: BovedillaAaComponent
   },
   {
-    path:'sistemas-constructivos-aislantes/amvic',
-    component:AmvicComponent
+    path: 'sistemas-constructivos-aislantes/amvic',
+    component: AmvicComponent
   },
   {
-    path:'decorativos/plafon',
-    component:PlafonComponent
+    path: 'decorativos/plafon',
+    component: PlafonComponent
   },
   {
-    path:'decorativos/molduras',
-    component:MoldurasComponent
+    path: 'decorativos/molduras',
+    component: MoldurasComponent
   },
   {
     path: 'cadena-fria/hielera',
     component: HieleraComponent
   },
   {
-    path:'ubicacion-contacto',
-    component:UbicacionContactoComponent
+    path: 'ubicacion-contacto',
+    component: UbicacionContactoComponent
   },
   {
-    path:'contacto',
-    component:ContactoComponent
+    path: 'contacto',
+    component: ContactoComponent
+  },
+  {
+    path: 'blog',
+    component: BlogComponent
+  },
+  {
+    path: 'post/:idPost',
+    component: PostComponent,
   }
 ];
 

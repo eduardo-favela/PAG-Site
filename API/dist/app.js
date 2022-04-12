@@ -13,6 +13,8 @@ var _morgan = _interopRequireDefault(require("morgan"));
 
 var _contacto = _interopRequireDefault(require("./routes/contacto"));
 
+var _ubicacion = _interopRequireDefault(require("./routes/ubicacion"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var app = (0, _express["default"])();
@@ -20,5 +22,6 @@ app.use((0, _cors["default"])());
 app.use((0, _morgan["default"])('dev'));
 app.use(_express["default"].json());
 app.use('/api/contacto', _contacto["default"]);
+app.use('/api/ubicacion', _ubicacion["default"]);
 var _default = app;
 exports["default"] = _default;
