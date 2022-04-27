@@ -12,6 +12,7 @@ import { UbicacionService } from '../../services/ubicacion.service';
 export class UbicacionContactoComponent implements OnInit {
 
   uens: any = []
+  activeState : boolean[] = [];
 
   constructor(private ubicacionService: UbicacionService) { }
 
@@ -41,15 +42,38 @@ export class UbicacionContactoComponent implements OnInit {
       }
     )
   }
-  addMarkers(map){
 
-    this.uens.forEach(element => {
-      const marker = new mapboxgl.Marker({
-        color: "#d22d35",
-        draggable: false
-      }).setLngLat([element.longitud, element.latitud])
+  addMarkers(map) {
+    this.uens.forEach((element, index) => {
+      let mark = document.createElement('div');
+      mark.className = 'marker';
+
+      switch (element.tipos_uen) {
+        case 1:
+          mark.style.backgroundImage ='url(../../../assets/images/map-icons/planta.png)'
+          break;
+        case 2:
+          mark.style.backgroundImage ='url(../../../assets/images/map-icons/oficinacd.png)'
+          break;
+        case 3:
+          mark.style.backgroundImage ='url(../../../assets/images/map-icons/oficinav.png)'
+          break;
+        default:
+          break;
+      }
+      /* mark.style.backgroundImage = (()?('url(../../../assets/images/map-icons/planta.png)'):('')); */
+      mark.style.width = '28px';
+      mark.style.height = '28px';
+      mark.style.borderRadius = '50%';
+      mark.onclick = () => {this.listener(index)};
+      this.activeState.push(false);
+      new mapboxgl.Marker(mark).setLngLat([element.longitud, element.latitud])
         .setPopup(new mapboxgl.Popup().setHTML(`<h6>Sucursal ${element.nombre_uen}</h6>`))
         .addTo(map);
     });
+  }
+
+  listener(index) {
+    this.activeState[index]= !this.activeState[index];
   }
 }

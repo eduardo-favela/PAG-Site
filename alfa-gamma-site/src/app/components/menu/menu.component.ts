@@ -43,8 +43,8 @@ export class MenuComponent implements OnInit {
             label: 'Aislantes',
             items: [
               {
-                label: 'R-SHIELD',
-                routerLink: '/aislantes/r-shield'
+                label: 'Climate',
+                routerLink: '/aislantes/climate'
               },
               {
                 label: 'Cubo integrado',
@@ -100,9 +100,6 @@ export class MenuComponent implements OnInit {
               {
                 label: 'Hielera',
                 routerLink: '/cadena-fria/hielera'
-              },
-              {
-                label: 'Alfabox'
               }
             ]
           }
@@ -123,6 +120,18 @@ export class MenuComponent implements OnInit {
           },
           {
             label: 'ARCEL',
+          }
+        ]
+      },
+      {
+        label: 'APLICACIÓN ESPECIAL',
+        icon: 'pi pi-star',
+        items: [
+          {
+            label: 'MOLDEO'
+          },
+          {
+            label: 'AGRICULTURA'
           }
         ]
       },

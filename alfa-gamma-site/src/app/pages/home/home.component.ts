@@ -20,10 +20,10 @@ export class HomeComponent implements OnInit {
       title: "Construcción"
     },
     {
-        previewImageSrc: "../../../assets/images/carousel/industria.jpg",
-        thumbnailImageSrc: "../../../assets/images/carousel/industria.jpg",
-        alt: "Industria",
-        title: "Industria"
+      previewImageSrc: "../../../assets/images/carousel/industria.jpg",
+      thumbnailImageSrc: "../../../assets/images/carousel/industria.jpg",
+      alt: "Industria",
+      title: "Industria"
     },
   ]
 
@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
           numVisible: 3
       }
   ];
-
+  
   constructor() { }
 
   ngOnInit(): void {

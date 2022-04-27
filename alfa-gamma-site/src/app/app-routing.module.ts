@@ -6,7 +6,6 @@ import { PerlitaComponent } from './pages/productos/aligerantes/perlita/perlita.
 import { InsertosBlockComponent } from './pages/productos/aligerantes/insertos-block/insertos-block.component';
 import { CuboIntegradoComponent } from './pages/productos/aislantes/cubo-integrado/cubo-integrado.component';
 import { MediaCanaComponent } from './pages/productos/aislantes/media-cana/media-cana.component';
-import { RShieldComponent } from './pages/productos/aislantes/r-shield/r-shield.component';
 import { PanelComponent } from './pages/productos/sistemas-constructivos-aislantes/panel/panel.component';
 import { GeosystemComponent } from './pages/productos/sistemas-constructivos-aislantes/geosystem/geosystem.component';
 import { BovedillaEComponent } from './pages/productos/sistemas-constructivos-aislantes/bovedilla-e/bovedilla-e.component';
@@ -19,6 +18,7 @@ import { UbicacionContactoComponent } from './pages/ubicacion-contacto/ubicacion
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { PostComponent } from './pages/post/post.component'
+import { ClimateComponent } from './pages/climate/climate.component';
 
 const routes: Routes = [
   {
@@ -46,8 +46,8 @@ const routes: Routes = [
     component: MediaCanaComponent
   },
   {
-    path: 'aislantes/r-shield',
-    component: RShieldComponent
+    path: 'aislantes/climate',
+    component: ClimateComponent
   },
   {
     path: 'sistemas-constructivos-aislantes/panel',
