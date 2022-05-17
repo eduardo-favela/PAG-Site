@@ -1,5 +1,21 @@
-<p-menubar [model]="items">
-    <ng-template pTemplate="end">
-        <img src="../../../assets/images/logo/PAG.png" height="60" class="mr-4">
-    </ng-template>
-</p-menubar>
+<div class="container-fluid">
+  <div class="p-fluid grid">
+    <div class="col-12" [style]="{'padding':'0'}">
+      <p-menubar [model]="items" [autoDisplay]="true">
+        <ng-template pTemplate="start">
+          <img src="../../../assets/images/logo/PAG.png" height="60" class="mr-4
+            ml-5">
+        </ng-template>
+        <ng-template pTemplate="end">
+          <a target="_blank" href="https://www.facebook.com/AlfaGammaMx">
+            <img class="mt-2" src="../../../assets/images/menu-icons/facebook.png" alt="FB-Logo">
+          </a>
+          <br>
+          <a target="_blank" href="https://www.instagram.com/alfagammapoliestireno">
+            <img class="mb-2 mt-1" src="../../../assets/images/menu-icons/instagram.png" alt="IG-Logo">
+          </a>
+        </ng-template>
+      </p-menubar>
+    </div>
+  </div>
+</div>

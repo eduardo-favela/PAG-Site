@@ -20,7 +20,7 @@
             <div class="row">
               <p-scrollPanel [style]="{width: '100%'}">
                 <p-accordion>
-                  <p-accordionTab [(selected)]="activeState[i]" *ngFor="let uen of uens; ; index as i;" header={{uen.nombre_uen}}>
+                  <p-accordionTab [(selected)]="activeState[i]" *ngFor="let uen of uens; index as i;" header={{uen.nombre_uen}}>
                     <p-divider></p-divider>
                       <p>{{uen.direccion}}</p>
                       <p>{{uen.estado}}, {{uen.ciudad}}</p>

@@ -1,108 +1,250 @@
+@font-face {
+  font-family: "Karla-Variable";
+  src: url("../../../assets/css/fonts/Karla-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../../../assets/css/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../../../assets/css/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../../../assets/css/fonts/Poppins-SemiBold.ttf");
+}
+
 /* Sections Header
 --------------------------------*/
 .section-header {
-    padding-inline: 15%;
+  padding-inline: 15%;
 }
 
 .section-header h3 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 32px;
-    color: #111;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 700;
-    position: relative;
-    padding-bottom: 15px;
-    /*margin-top: 25px;  QUITARLE SEPARACCION TITULOS  */
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  color: #111;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+  /*margin-top: 25px;  QUITARLE SEPARACCION TITULOS  */
+}
+
+.section-header h3::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-header h3::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #9d162e; /* #18d26e;*/
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-header p {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  padding-bottom: 30px;
+  color: #333;
+}
+
+/*Card Multicolor */
+#team img {
+  /* margin-top: -50px; */
+  border-radius: 10px;
+}
+
+#team i {
+  font-size: 26px;
+  color: #555;
+}
+
+#team .card {
+  height: 100%;
+  border-radius: 0;
+  box-shadow: 5px 5px 15px #2b2727;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3 ease-in;
+}
+
+#team h3 {
+  margin-top: 10px;
+}
+
+#team .card:hover {
+  background: #af0d0d;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 5px 5px 10px #9e9e9e;
+}
+
+#team .card:hover h3,
+#team .card:hover i,
+.pCard:hover {
+  color: #fff;
+  margin-top: 10px;
+}
+
+/* p,
+h3, h1 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+} */
+
+.image-wrapper {
+  display: inline-block;
+  position: relative;
+  /* this will center the image in the container */
+  margin: 0 auto;
+}
+
+.contenidoBanner {
+  font-family: Poppins-Regular;
+  color: #868686;
+}
+
+.bannerText2 {
+  position: absolute;
+  top: 0;
+  margin-left: 50%;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .p-card-title {
+  font-family: Poppins-SemiBold;
+  color: #2D2D2D;
+}
+
+::ng-deep .p-card-content {
+  font-family: Poppins-Regular;
+  color: #868686;
+}
+
+@media screen and (max-width: 1000px) {
+  .contenidoBanner {
+    font-family: Poppins-Regular;
+    color: #868686;
+    max-height: 20vh;
+    overflow: hidden;
+    display: -webkit-box;
   }
+}
 
-  .section-header h3::before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 120px;
-    height: 1px;
-    background: #ddd;
-    bottom: 1px;
-    left: calc(50% - 60px);
-  }
-
-  .section-header h3::after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 40px;
-    height: 3px;
-    background: #9d162e; /* #18d26e;*/
-    bottom: 0;
-    left: calc(50% - 20px);
-  }
-
-  .section-header p {
-    font-family: "Open Sans", sans-serif;
-    text-align: center;
-    padding-bottom: 30px;
-    color: #333;
-  }
-
-
-  /*Card Multicolor */
-#team img{
-    /* margin-top: -50px; */
-    border-radius: 10px;
-  }
-
-  #team i{
-    font-size: 26px;
-    color: #555;
-  }
-
-  #team .card{
-    height: 100%;
-    border-radius: 0;
-    box-shadow: 5px 5px 15px #2b2727;
-    transition: all 0.3s ease-in;
-    -webkit-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3 ease-in;
-  }
-
-  #team h3{
-    margin-top: 10px;
-  }
-
-  #team .card:hover{
-    background: #af0d0d;
-    color: #fff;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 5px 5px 10px #9E9E9E;
-  }
-
-  #team .card:hover h3, #team .card:hover i ,.pCard:hover{
-    color: #fff;
-    margin-top: 10px;
-  }
-
-  /*VIDEO*/
-
-.v-container{
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    height: 0;
-  }
-
-  .v-container iframe{
+@media screen and (max-width: 600px) {
+  /* Pantallas pequeñas de hasta 600px (celulares) */
+  .bannerText {
+    padding: 0;
+    margin-left: 8%;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    margin-top: 38%;
   }
 
-  p, h3{
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  .image-container img {
+    width: 250%;
   }
+
+  .contenidoBanner {
+    max-height: 10vh;
+    overflow: hidden;
+    display: -webkit-box;
+  }
+
+  .anteTituloBanner {
+    color: #d2313b;
+    font-size: 3vw;
+    margin: 0;
+    font-family: Poppins-Regular;
+  }
+
+  .anteTitulo {
+    color: #d2313b;
+    font-size: 2.5vw;
+    margin: 0;
+    font-family: Poppins-Regular;
+  }
+
+  .titulo {
+    color: #2d2d2d;
+    font-size: 6vw;
+    font-family: Poppins-Bold;
+  }
+
+  .tituloBanner {
+    color: #2d2d2d;
+    font-size: 6vw;
+    font-family: Poppins-Bold;
+  }
+
+  .certImg {
+    width: 150%;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  /* Pantallas más grandes de 601px (tablets, computadoras, etc) */
+  .bannerText {
+    padding: 0;
+    margin-left: 8%;
+    position: absolute;
+    top: 0;
+    margin-top: 23%;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+
+  .anteTituloBanner {
+    color: #d2313b;
+    font-size: 1.3vw;
+    margin: 0;
+    font-family: Poppins-Regular;
+  }
+
+  .anteTitulo {
+    color: #d2313b;
+    font-size: 1vw;
+    margin: 0;
+    font-family: Poppins-Regular;
+  }
+
+  .titulo {
+    color: #2d2d2d;
+    font-size: 3vw;
+    font-family: Poppins-Bold;
+  }
+
+  .tituloBanner {
+    color: #2d2d2d;
+    font-size: 5vw;
+    font-family: Poppins-Bold;
+  }
+
+  .certImg {
+    width: 80%;
+  }
+}

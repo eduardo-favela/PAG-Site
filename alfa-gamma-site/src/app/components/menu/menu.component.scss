@@ -1,3 +1,38 @@
-.p-menubar .p-component, .p-component *{
-    background: blue;
+@font-face {
+  font-family: "Karla-Variable";
+  src: url("../../../assets/css/fonts/Karla-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../../../assets/css/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../../../assets/css/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../../../assets/css/fonts/Poppins-SemiBold.ttf");
+}
+
+::ng-deep .menuitem {
+  font-family: Karla-Variable;
+  color: #6f6f71;
+  font-weight: bold;
+  margin: auto;
+}
+
+::ng-deep p-menubarsub {
+  width: 100%;
+}
+
+::ng-deep .menuitem:hover .p-menuitem-text {
+  color: #d2313b !important;
+  border-bottom: 1px solid #d2313b;
+  padding-bottom: 2px;
+  transition: 0.25s;
+}
+
+::ng-deep .menuitem .p-submenu-icon {
+  display: none;
 }

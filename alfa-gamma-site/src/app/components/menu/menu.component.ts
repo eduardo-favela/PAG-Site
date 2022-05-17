@@ -15,139 +15,167 @@ export class MenuComponent implements OnInit {
     this.items = [
       {
         label: 'INICIO',
-        icon: 'pi pi-fw pi-home',
-        routerLink: '/'
+        routerLink: '/',
+        styleClass: 'menuitem',
       },
       {
         label: 'PRODUCTOS',
-        icon: 'pi pi-fw pi-tag',
+        styleClass: 'menuitem',
         items: [
           {
             label: 'Aligerantes',
+            styleClass: 'menuitem',
             items: [
               {
                 label: 'Casetón',
+                styleClass: 'menuitem',
                 routerLink: '/aligerantes/caseton'
               },
               {
                 label: 'Perlita',
+                styleClass: 'menuitem',
                 routerLink: '/aligerantes/perlita'
               },
               {
                 label: 'Insertos de block',
+                styleClass: 'menuitem',
                 routerLink: '/aligerantes/insertos-block'
               }
             ]
           },
           {
             label: 'Aislantes',
+            styleClass: 'menuitem',
             items: [
               {
                 label: 'Climate',
+                styleClass: 'menuitem',
                 routerLink: '/aislantes/climate'
               },
               {
                 label: 'Cubo integrado',
+                styleClass: 'menuitem',
                 routerLink: '/aislantes/cubo-integrado'
               },
               {
                 label: 'Media Caña',
+                styleClass: 'menuitem',
                 routerLink: '/aislantes/media-cana'
               }
             ]
           },
           {
+            label: 'Aplicación especial',
+            styleClass: 'menuitem',
+            items: [
+              {
+                label: 'MOLDEO',
+                styleClass: 'menuitem',
+              },
+              {
+                label: 'AGRICULTURA',
+                styleClass: 'menuitem',
+              }
+            ]
+          },
+          {
             label: 'Sistemas Constructivos y Aislantes',
+            styleClass: 'menuitem',
             items: [
               {
                 label: 'Panel',
+                styleClass: 'menuitem',
                 routerLink: '/sistemas-constructivos-aislantes/panel'
               },
               {
                 label: 'Bovedilla envolvente',
+                styleClass: 'menuitem',
                 routerLink: '/sistemas-constructivos-aislantes/bovedilla-e'
               },
               {
                 label: 'AMVIC',
+                styleClass: 'menuitem',
                 routerLink: '/sistemas-constructivos-aislantes/amvic'
               },
               {
                 label: 'Bovedilla alma abierta',
+                styleClass: 'menuitem',
                 routerLink: '/sistemas-constructivos-aislantes/bovedilla-aa'
               },
               {
                 label: 'Geosystem',
+                styleClass: 'menuitem',
                 routerLink: '/sistemas-constructivos-aislantes/geosystem'
               },
             ]
           },
           {
             label: 'Decorativos',
+            styleClass: 'menuitem',
             items: [
               {
                 label: 'Plafón',
+                styleClass: 'menuitem',
                 routerLink: '/decorativos/plafon'
               },
               {
                 label: 'Molduras',
+                styleClass: 'menuitem',
                 routerLink: '/decorativos/molduras'
               }
             ]
           },
           {
             label: 'Cadena Fría',
+            styleClass: 'menuitem',
             items: [
               {
                 label: 'Hielera',
+                styleClass: 'menuitem',
                 routerLink: '/cadena-fria/hielera'
               }
             ]
           }
-
         ]
       },
       {
         label: 'MATERIALES',
-        icon: 'pi pi-fw pi-box',
+        styleClass: 'menuitem',
         items: [
           {
             label: 'EPS',
+            styleClass: 'menuitem',
 
           },
           {
             label: 'EPP',
+            styleClass: 'menuitem',
 
           },
           {
             label: 'ARCEL',
+            styleClass: 'menuitem',
           }
         ]
       },
       {
-        label: 'APLICACIÓN ESPECIAL',
-        icon: 'pi pi-star',
-        items: [
-          {
-            label: 'MOLDEO'
-          },
-          {
-            label: 'AGRICULTURA'
-          }
-        ]
+        label: 'BENEFICIOS',
+        styleClass: 'menuitem',
+        routerLink: '/'
       },
       {
         label: 'UBICACIÓN',
-        icon: 'pi pi-fw pi-map-marker',
+        styleClass: 'menuitem',
         routerLink: '/ubicacion-contacto'
       },
       {
         label: 'CONTACTO',
-        icon: 'pi pi-envelope',
+        styleClass: 'menuitem',
         routerLink: '/contacto'
       },
       {
         label: 'BLOG',
-        icon: 'pi pi-book',
+        styleClass: 'menuitem',
         routerLink: '/blog'
       }
     ];
