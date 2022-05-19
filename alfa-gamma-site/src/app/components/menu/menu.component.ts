@@ -69,11 +69,11 @@ export class MenuComponent implements OnInit {
             styleClass: 'menuitem',
             items: [
               {
-                label: 'MOLDEO',
+                label: 'Moldeo',
                 styleClass: 'menuitem',
               },
               {
-                label: 'AGRICULTURA',
+                label: 'Agricultura',
                 styleClass: 'menuitem',
               }
             ]

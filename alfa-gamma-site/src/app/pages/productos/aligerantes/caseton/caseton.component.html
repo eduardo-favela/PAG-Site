@@ -1,120 +1,164 @@
 <app-menu></app-menu>
 
-<p-galleria [value]="images" [numVisible]="5" [circular]="true" [showThumbnails]="false">
-        <ng-template pTemplate="item" let-item>
-            <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
-        </ng-template>
-</p-galleria>
+<app-wpp-floating></app-wpp-floating>
 
-
-<main id="main">
-    <section id="call-to-caseton" class="wow fadeIn">
-      <!--<div class="container text-center">
-        <a class="cta-btn" href="#">Call To Action</a>
-      </div>-->
-    </section><!-- #call-to-action -->
-    <!--==========================
-      About Us Section
-    ============================-->
-    <section id="descripcionProducto">
-      <div class="container">
-        <app-wpp-floating></app-wpp-floating>
-        <header class="section-header wow fadeInUp mb-5">
-          <h3>Descripción del Producto</h3>
-        </header>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-arrow-down-right" style="font-size: 2rem"></i></div>
-            <h4 class="title"><a href="">Ahorro</a></h4>
-            <p class="description">Permite ahorrar de un 10 a un 30% en costos de mano de obra y cimbra en comparación con los sistemas utilizados tradicionalmente (losa sólida, losa aligerada con barro, bloc, adobón, ladrillo, etc.)</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-box" style="font-size: 2rem"></i></div>
-            <h4 class="title"><a href="">Versatilidad y Resistencia</a></h4>
-            <p class="description">En cada una de sus piezas les permiten adaptarse a cualquier diseño o cálculo minimizando el despercidio de material.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-sun" style="font-size: 2rem"></i></div>
-            <h4 class="title"><a href="">Alta Protección Térmica</a></h4>
-            <p class="description">Lo cual es indispensable en zonas de temperatura térmica, lo cual provee confor y ahorro de energía empleada en refrigeración o calefacción en interiores.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-volume-off" style="font-size: 2rem"></i></div>
-            <h4 class="title"><a href="">Alta Protección Acústica</a></h4>
-            <p class="description">Lo cual permite disminuir los ruidos exteriores, brindando mayor comodidad y privacidad en interiores (abosorbe de 25 a 30 decibeles según su acomodo).</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-cloud" style="font-size: 2rem"></i></div>
-            <h4 class="title"><a href="">Ligereza</a></h4>
-            <p class="description">En cada una de sus piezas permite obtener ahorros en cimentación.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-directions" style="font-size: 2rem"></i></div>
-            <h4 class="title"><a href="">Fácil manejo y rapidez</a></h4>
-            <p class="description">La ligereza y fácil manejo de sus piezas permiten trabajar con mayor limpieza y orden en la obra, ya que pueden ser estibadas y almacenadas con facilidad. Su rápida instalación es ideal para construcción de viviendas en serie.</p>
-          </div>
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="p-fluid grid p-0">
+      <div class="col-12 image-wrapper">
+        <img [style]="{'width':'100%'}"
+          src="../../../../../assets/images/productos/aligerantes/caseton/caseton.jpg"
+          alt="BannerPrincipal">
+        <div class="col-6 bannerText">
+          <p class="anteTituloBanner">APRENDA MÁS SOBRE</p>
+          <h1 class="tituloBanner">Casetón</h1>
         </div>
       </div>
-    </section>
-    <!--==========================
-      Contact Section
-    ============================-->
-    <section id="about">
-      <div class="container">
-        <header class="section-header">
-          <h3>Aplicaciones del Producto</h3>
-        </header>
+    </div>
+  </div>
 
-        <div class="row about-cols">
-          <div class="col-md-4 wow fadeInUp">
-            <div class="about-col">
-              <div class="img">
-                <img src="../../../../../assets/images/productos/aligerantes/caseton/aplicaciones/caseton1.JPG" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-              </div>
-            </div>
-          </div>
+  <!--Sección de características-->
 
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="about-col">
-              <div class="img">
-                <img src="../../../../../assets/images/productos/aligerantes/caseton/aplicaciones/caseton2.JPG" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-list-outline"></i></div>
-              </div>
-            </div>
+  <div class="row pt-6">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-6 text-center">
+        <p class="anteTituloBanner">CARACTERISTICAS</p>
+      </div>
+    </div>
+  </div>
+  <div class="row pt-5">
+    <div class="p-fluid grid flex justify-content-evenly">
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Ahorro"
+              src="../../../../../assets/images/caracteristicas/23_ahorro.png">
           </div>
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="about-col">
-              <div class="img">
-                <img src="../../../../../assets/images/productos/aligerantes/caseton/aplicaciones/caseton3.JPG" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-list-outline"></i></div>
-              </div>
-            </div>
+          <div class="col-10">
+            <h6 class="card-title">Ahorro</h6>
+            <p class="card-content">Permite ahorrar de un 10 a un 30% en costos de mano de obra y cimbra en comparación con los sistemas utilizados tradicionalmente (losa sólida, losa aligerada con barro, bloc, adobón, ladrillo, etc.)</p>
           </div>
         </div>
       </div>
-    </section><!-- #about -->
-    <section id="descripcionProducto">
-      <div class="container">
-        <header class="section-header wow fadeInUp">
-          <h3>Ficha Tecnica</h3>
-        </header>
-
-        <div class="row">
-          <div class="col-lg-12 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-            <p class="description">Descripción.
-            </p>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Versatilidad"
+              src="../../../../../assets/images/caracteristicas/24_versatil.png">
           </div>
-
-        </div>
-        <div class="row">
-            <embed src="../../../../../assets/pdf/productos/aligerantes/caseton/FICHA TECNICA_CASETON2_ALFA GAMMA.PDF" type="application/pdf" width="100%" height="600px" />
+          <div class="col-10">
+            <h6 class="card-title">Versatilidad y Resistencia</h6>
+            <p class="card-content">En cada una de sus piezas les permiten adaptarse a cualquier diseño o cálculo minimizando el despercidio de material.</p>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Protec_termica"
+              src="../../../../../assets/images/caracteristicas/10_protec_termica.png">
+          </div>
+          <div class="col-10">
+            <h6 class="card-title">Alta Protección Térmica</h6>
+            <p class="card-content">Lo cual es indispensable en zonas de temperatura térmica, lo cual provee confor y ahorro de energía empleada en refrigeración o calefacción en interiores.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Ligereza"
+              src="../../../../../assets/images/caracteristicas/04_ligero.png">
+          </div>
+          <div class="col-10">
+            <h6 class="card-title">Ligereza</h6>
+            <p class="card-content">En cada una de sus piezas permite obtener ahorros en cimentación.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="protec_acustica"
+              src="../../../../../assets/images/caracteristicas/11_protec_acustica.png">
+          </div>
+          <div class="col-10">
+            <h6 class="card-title">Alta Protección Acústica</h6>
+            <p class="card-content">Lo cual permite disminuir los ruidos exteriores, brindando mayor comodidad y privacidad en interiores (abosorbe de 25 a 30 decibeles según su acomodo).</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Facil_manejo"
+              src="../../../../../assets/images/caracteristicas/03_facil_manejo.png">
+          </div>
+          <div class="col-10">
+            <h6 class="card-title">Fácil Manejo y Rapidez</h6>
+            <p class="card-content">La ligereza y fácil manejo de sus piezas permiten trabajar con mayor limpieza y orden en la obra, ya que pueden ser estibadas y almacenadas con facilidad. Su rápida instalación es ideal para construcción de viviendas en serie.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!--Sección de multimedia-->
+
+  <div class="row pt-6">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-6 text-center">
+        <p class="anteTituloBanner">MULTIMEDIA</p>
+      </div>
+    </div>
+  </div>
+  <div class="row p-5 flex justify-content-around">
+    <div class="p-fluid grid">
+      <div class="col-6 md:col-4 flex justify-content-center">
+        <p-image
+          src='../../../../../assets/images/productos/aligerantes/caseton/aplicaciones/caseton1.JPG'
+          alt='Aplicacion_1' width="100%"
+          [preview]="true"></p-image>
+      </div>
+      <div class="col-6 md:col-4 flex justify-content-center">
+        <p-image
+          src='../../../../../assets/images/productos/aligerantes/caseton/aplicaciones/caseton2.JPG'
+          alt='Aplicacion_2' width="100%"
+          [preview]="true"></p-image>
+      </div>
+      <div class="col-6 md:col-4 flex justify-content-center">
+        <p-image
+          src='../../../../../assets/images/productos/aligerantes/caseton/aplicaciones/caseton3.JPG'
+          alt='Aplicacion_3' width="100%"
+          [preview]="true"></p-image>
+      </div>
+    </div>
+  </div>
+
+  <!--Sección de ficha técnica-->
+
+  <div class="row pt-6">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-6 text-center">
+        <p class="anteTituloBanner">SOPORTE</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row pt-5">
+      <div class="p-fluid grid flex justify-content-center">
+        <h6 class="fichaTecnica">Ficha técnica</h6>
+      </div>
+    </div>
+  </div>
+  <div class="row p-5 flex justify-content-around">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-8">
+        <embed
+          src="../../../../../assets/pdf/productos/aligerantes/caseton/FICHA TECNICA_CASETON2_ALFA GAMMA.PDF" type="application/pdf" width="100%"
+          height="600px" />
+      </div>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>

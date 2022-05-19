@@ -53,7 +53,7 @@ import { environment } from '../../environments/environment';
 import { BlogComponent } from './blog/blog.component';
 import { PostComponent } from './post/post.component';
 import {ImageModule} from 'primeng/image';
-import { ClimateComponent } from './climate/climate.component';
+import { ClimateComponent } from './productos/aislantes/climate/climate.component';
 
 @NgModule({
   declarations: [

@@ -1,117 +1,158 @@
 <app-menu></app-menu>
 
-<p-galleria [value]="images" [numVisible]="5" [circular]="true" [showThumbnails]="false">
-        <ng-template pTemplate="item" let-item>
-            <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
-        </ng-template>
-</p-galleria>
+<app-wpp-floating></app-wpp-floating>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="p-fluid grid p-0">
+      <div class="col-12 image-wrapper">
+        <img [style]="{'width':'100%'}"
+          src="../../../../../assets/images/productos/sistemas-constructivos-aislantes/geosystem/geosystem.jpg"
+          alt="BannerPrincipal">
+        <div class="col-6 bannerText">
+          <p class="anteTituloBanner">APRENDA MÁS SOBRE</p>
+          <h1 class="tituloBanner">Geosystem</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<main id="main">
-    <section id="call-to-caseton" class="wow fadeIn">
-      <!--<div class="container text-center">
-        <a class="cta-btn" href="#">Call To Action</a>
-      </div>-->
-    </section><!-- #call-to-action -->
-    <!--==========================
-      About Us Section
-    ============================-->
-    <section id="descripcionProducto">
-      <div class="container">
-        <app-wpp-floating></app-wpp-floating>
-        <header class="section-header wow fadeInUp">
-          <h3>Descripción del Producto</h3>
-        </header>
-        <div class="row mt-5">
-          <div class="col-lg-12 col-md-12 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-chart-line"></i></div>
-            <h4 class="title"><a href="">Foam-Control EPS Geosystem®.</a></h4>
-            <p class="description">Es un material plástico celular que es resistente, pero con una densidad muy baja (1% de la tierra común para rellenos).<br/>
-            Es fabricado en forma de bloque y cumple con la norma ASTM D6817 (Especificación estándar para material rígido, poliestireno celular Geosystem®).<br/>
-            Está disponible en diferentes tipos de densidad para proporcionar un control de la integridad estructural y del costo, eficacia del sistema.<br/>
-            La información proporcionada se considera oportuna, precisa y fiable para el uso.<br/>
-            Cada proyecto Foam-Control EPS Geosystem® debe ser diseñado por un ingeniero profesional.<br/>
-            La ingeniería o las especificaciones del proyecto deben ser consultadas para determinar la norma ASTM D6817 Tipo necesaria para las condiciones de carga del proyecto.
-            </p>
+  <!--Sección de características-->
+
+  <div class="row pt-6">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-6 text-center">
+        <p class="anteTituloBanner">CARACTERISTICAS</p>
+      </div>
+    </div>
+  </div>
+  <div class="row pt-5">
+    <div class="p-fluid grid flex justify-content-evenly">
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Foam-control"
+              src="../../../../../assets/images/caracteristicas/12_foam_control.png">
           </div>
-          <div class="col-lg-12 col-md-12 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-shield"></i></div>
-            <h4 class="title"><a href="">Aseguramiento de la Calidad</a></h4>
-            <p class="description">Cumple o supera los requisitos de la norma ASTM D6817, “Standard Specification for Rigid, Cellular Polystyrene Geosystem”. Foam-Control EPS es moni- toreado por el departamento de control de calidad de UL LLC.</p>
-          </div>
-          <div class="col-lg-12 col-md-12 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-box"></i></div>
-            <h4 class="title"><a href="">La Resistencia a las Termitas, Moho y Hongos.</a></h4>
-            <p class="description">Lo cual es indispensable en zonas de temperatura térmica, lo cual provee confor y ahorro de energía empleada en refrigeración o calefacción en interiores.</p>
-          </div>
-          <div class="col-lg-12 col-md-12 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-database"></i></div>
-            <h4 class="title"><a href="">Almacenamiento y Colocación.</a></h4>
-            <p class="description">Foam-Control EPS Geosystem® no sufre ningún tipo de cambio en el corto plazo bajo condiciones climáticas cualquiera. La exposición prolongada al sol causa amarillamiento y ligera fragilización de la superficie debido a la luz ultravioleta. Esto tiene poco efecto sobre las propiedades mecánicas. Si los bloques estarán en la intemperie almacenados, por largo periodo, se recomienda cubrirlos con una cubierta de polietileno opaco, lonas o material similar.
-            <br/><br/>
-            Los bloques de Foam-Control EPS Geosystem® deben ser anclados o tener contrapesos para evitar ser desplazados por el viento o por niveles altos de agua, tanto en el almacenamiento, como durante todas las fases de la colocación.
-            .</p>
-          </div>
-          <div class="col-lg-12 col-md-12 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-bookmark"></i></div>
-            <h4 class="title"><a href="">Garantía</a></h4>
-            <p class="description">Los licenciatarios de Foam-Control EPS Geosystem® ofrecen un producto con garantía que asegura las propiedades físicas del material.</p>
+          <div class="col-10">
+            <h6 class="card-title">Foam-Control EPS Geosystem®</h6>
+            <p class="card-content">Es un material plástico celular que es resistente, pero con una densidad muy baja (1% de la tierra común para rellenos).
+              Es fabricado en forma de bloque y cumple con la norma ASTM D6817 (Especificación estándar para material rígido, poliestireno celular Geosystem®).
+              Está disponible en diferentes tipos de densidad para proporcionar un control de la integridad estructural y del costo, eficacia del sistema.
+              La información proporcionada se considera oportuna, precisa y fiable para el uso.
+              Cada proyecto Foam-Control EPS Geosystem® debe ser diseñado por un ingeniero profesional.
+              La ingeniería o las especificaciones del proyecto deben ser consultadas para determinar la norma ASTM D6817 Tipo necesaria para las condiciones de carga del proyecto.</p>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <header class="section-header">
-          <h3>Aplicaciones del Producto</h3>
-        </header>
-
-        <div class="row about-cols justify-content-center mt-5">
-          <div class="col-md-4 wow fadeInUp">
-            <div class="about-col">
-              <div class="img">
-                <img src="../../../../../assets/images/productos/sistemas-constructivos-aislantes/geosystem/aplicaciones/geosystem1.png" alt="" class="img-fluid">
-              </div>
-            </div>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Calidad"
+              src="../../../../../assets/images/caracteristicas/13_calidad.png">
           </div>
-          <div class="col-md-4 wow fadeInUp">
-            <div class="about-col">
-              <div class="img">
-                <img src="../../../../../assets/images/productos/sistemas-constructivos-aislantes/geosystem/aplicaciones/geosystem2.png" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 wow fadeInUp">
-            <div class="about-col">
-              <div class="img">
-                <img src="../../../../../assets/images/productos/sistemas-constructivos-aislantes/geosystem/aplicaciones/geosystem3.png" alt="" class="img-fluid">
-              </div>
-            </div>
+          <div class="col-10">
+            <h6 class="card-title">Aseguramiento de la Calidad</h6>
+            <p class="card-content">Cumple o supera los requisitos de la norma ASTM D6817, “Standard Specification for Rigid, Cellular Polystyrene Geosystem”. Foam-Control EPS es moni- toreado por el departamento de control de calidad de UL LLC.</p>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="descripcionProducto">
-      <div class="container">
-        <header class="section-header wow fadeInUp">
-          <h3>Ficha Tecnica</h3>
-        </header>
-
-        <div class="row">
-          <div class="col-lg-12 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-            <p class="description">Descripción.
-            </p>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Resistencia"
+              src="../../../../../assets/images/caracteristicas/25_resist_termitas.png">
           </div>
-
-        </div>
-        <div class="row">
-            <embed src="../../../../../assets/pdf/productos/sistemas-constructivos-aislantes/geosystem/FICHA TECNICA_GEOSYSTEM_ALFA GAMMA.pdf" type="application/pdf" width="100%" height="600px" />
+          <div class="col-10">
+            <h6 class="card-title">La Resistencia a las Termitas, Moho y Hongos</h6>
+            <p class="card-content">Lo cual es indispensable en zonas de temperatura térmica, lo cual provee confor y ahorro de energía empleada en refrigeración o calefacción en interiores.</p>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Almacenamiento"
+              src="../../../../../assets/images/caracteristicas/16_almac.png">
+          </div>
+          <div class="col-10">
+            <h6 class="card-title">Almacenamiento y Colocación</h6>
+            <p class="card-content">Foam-Control EPS Geosystem® no sufre ningún tipo de cambio en el corto plazo bajo condiciones climáticas cualquiera. La exposición prolongada al sol causa amarillamiento y ligera fragilización de la superficie debido a la luz ultravioleta. Esto tiene poco efecto sobre las propiedades mecánicas. Si los bloques estarán en la intemperie almacenados, por largo periodo, se recomienda cubrirlos con una cubierta de polietileno opaco, lonas o material similar.
+              Los bloques de Foam-Control EPS Geosystem® deben ser anclados o tener contrapesos para evitar ser desplazados por el viento o por niveles altos de agua, tanto en el almacenamiento, como durante todas las fases de la colocación.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Garantia"
+              src="../../../../../assets/images/caracteristicas/15_garantia.png">
+          </div>
+          <div class="col-10">
+            <h6 class="card-title">Garantía</h6>
+            <p class="card-content">Los licenciatarios de Foam-Control EPS Geosystem® ofrecen un producto con garantía que asegura las propiedades físicas del material.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!--Sección de multimedia-->
+
+  <div class="row pt-6">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-6 text-center">
+        <p class="anteTituloBanner">MULTIMEDIA</p>
+      </div>
+    </div>
+  </div>
+  <div class="row p-5 flex justify-content-around">
+    <div class="p-fluid grid flex justify-content-evenly">
+      <div class="col-6 md:col-4 flex justify-content-center">
+        <p-image
+          src='../../../../../assets/images/productos/sistemas-constructivos-aislantes/geosystem/aplicaciones/geosystem1.png'
+          alt='Aplicacion_1' width="100%"
+          [preview]="true"></p-image>
+      </div>
+      <div class="col-6 md:col-4 flex justify-content-center">
+        <p-image
+          src='../../../../../assets/images/productos/sistemas-constructivos-aislantes/geosystem/aplicaciones/geosystem2.png'
+          alt='Aplicacion_1' width="100%"
+          [preview]="true"></p-image>
+      </div>
+      <div class="col-6 md:col-4 flex justify-content-center">
+        <p-image
+          src='../../../../../assets/images/productos/sistemas-constructivos-aislantes/geosystem/aplicaciones/geosystem3.png'
+          alt='Aplicacion_1' width="100%"
+          [preview]="true"></p-image>
+      </div>
+    </div>
+  </div>
+
+  <!--Sección de ficha técnica-->
+
+  <div class="row pt-6">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-6 text-center">
+        <p class="anteTituloBanner">SOPORTE</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row pt-5">
+      <div class="p-fluid grid flex justify-content-center">
+        <h6 class="fichaTecnica">Ficha técnica</h6>
+      </div>
+    </div>
+  </div>
+  <div class="row p-5 flex justify-content-around">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-8">
+        <embed
+          src="../../../../../assets/pdf/productos/sistemas-constructivos-aislantes/geosystem/FICHA TECNICA_GEOSYSTEM_ALFA GAMMA.pdf" type="application/pdf" width="100%"
+          height="600px" />
+      </div>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>

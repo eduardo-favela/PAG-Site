@@ -42,12 +42,24 @@
   font-weight: bold;
 }
 
-.lista-footer {
-  text-align: left !important;
-  list-style: none;
-  margin-top: 2rem;
-  margin-left: 1rem;
-  color: #e1e1e1;
-  font-family: Karla-Variable;
-  padding: 0;
+@media screen and (max-width: 750px){
+  .lista-footer {
+    text-align: left !important;
+    list-style: none;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    color: #e1e1e1;
+    font-family: Karla-Variable;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 751px){
+  .lista-footer {
+    text-align: left !important;
+    list-style: none;
+    color: #e1e1e1;
+    font-family: Karla-Variable;
+    padding: 0;
+  }
 }

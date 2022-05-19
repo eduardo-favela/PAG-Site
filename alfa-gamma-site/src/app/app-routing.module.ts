@@ -18,7 +18,7 @@ import { UbicacionContactoComponent } from './pages/ubicacion-contacto/ubicacion
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { PostComponent } from './pages/post/post.component'
-import { ClimateComponent } from './pages/climate/climate.component';
+import { ClimateComponent } from './pages/productos/aislantes/climate/climate.component';
 
 const routes: Routes = [
   {

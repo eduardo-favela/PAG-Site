@@ -26,7 +26,7 @@
   width: 100%;
 }
 
-::ng-deep .menuitem:hover .p-menuitem-text {
+::ng-deep .p-menuitem-active > a span.p-menuitem-text {
   color: #d2313b !important;
   border-bottom: 1px solid #d2313b;
   padding-bottom: 2px;

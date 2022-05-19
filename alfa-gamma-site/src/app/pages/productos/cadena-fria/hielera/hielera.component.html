@@ -1,97 +1,142 @@
 <app-menu></app-menu>
 
-<p-galleria [value]="images" [numVisible]="5" [circular]="true" [showThumbnails]="false">
-        <ng-template pTemplate="item" let-item>
-            <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
-        </ng-template>
-</p-galleria>
+<app-wpp-floating></app-wpp-floating>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="p-fluid grid p-0">
+      <div class="col-12 image-wrapper">
+        <img [style]="{'width':'100%'}"
+          src="../../../../../assets/images/productos/cadena-fria/hielera/hielera.jpg"
+          alt="BannerPrincipal">
+        <div class="col-6 bannerText">
+          <p class="anteTituloBanner">APRENDA MÁS SOBRE</p>
+          <h1 class="tituloBanner">Hielera</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<main id="main">
-    <section id="call-to-caseton" class="wow fadeIn">
-      <!--<div class="container text-center">
-        <a class="cta-btn" href="#">Call To Action</a>
-      </div>-->
-    </section><!-- #call-to-action -->
-    <!--==========================
-      About Us Section
-    ============================-->
-    <section id="descripcionProducto">
-      <div class="container">
-        <app-wpp-floating></app-wpp-floating>
-        <header class="section-header wow fadeInUp">
-          <h3>Descripción del Producto</h3>
-        </header>
-        <div class="row mt-5">
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-sort-alt"></i></div>
-            <h4 class="title"><a href="">Versatilidad</a></h4>
-            <p class="description">El práctico e innovador diseño de la hielera ALFA-GAMMA te permite llevarla contigo en cualquier ocasión, resolviendo tus necesidades de almacenamiento de productos que requieran refrigeración.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-inbox"></i></div>
-            <h4 class="title"><a href="">Gran capacidad</a></h4>
-            <p class="description">Lo cual soluciona tus problemas de espacio para almacenar y llevar contigo lo que quieras.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-table"></i></div>
-            <h4 class="title"><a href="">Tapa charola</a></h4>
-            <p class="description">El diseño innovador de su tapa-charola le permite sobresalir de otras hieleras convencionales brindandote mayor comodidad de disfrutar tus bebidas.</p>
-          </div>
-          <div class="col-lg-2 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+  <!--Sección de características-->
 
+  <div class="row pt-6">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-6 text-center">
+        <p class="anteTituloBanner">CARACTERISTICAS</p>
+      </div>
+    </div>
+  </div>
+  <div class="row pt-5">
+    <div class="p-fluid grid flex justify-content-evenly">
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Versatilidad"
+              src="../../../../../assets/images/caracteristicas/24_versatil.png">
           </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-id-card"></i></div>
-            <h4 class="title"><a href="">Imprime tu logo</a></h4>
-            <p class="description">Incrementa tus ventas y refuerza la imagen de tu empresa o negocio imprimiendo tu logo en las partes laterlaes de la hielera.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="pi pi-box"></i></div>
-            <h4 class="title"><a href="">Áreas de impresión lateral.</a></h4>
-            <p class="description">26x16cm.</p>
+          <div class="col-10">
+            <h6 class="card-title">Descripción</h6>
+            <p class="card-content">El práctico e innovador diseño de la hielera ALFA-GAMMA te permite llevarla contigo en cualquier ocasión, resolviendo tus necesidades de almacenamiento de productos que requieran refrigeración.</p>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <header class="section-header">
-          <h3>Aplicaciones del Producto</h3>
-        </header>
-
-        <div class="row about-cols justify-content-center mt-5">
-          <div class="col-md-2 wow fadeInUp">
-            <div class="about-col">
-              <div class="img">
-                <img src="../../../../../assets/images/productos/cadena-fria/hielera/aplicaciones/hielera1.png" alt="" class="img-fluid">
-              </div>
-            </div>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Gran capacidad"
+              src="../../../../../assets/images/caracteristicas/06_capacidad.png">
+          </div>
+          <div class="col-10">
+            <h6 class="card-title">Gran capacidad</h6>
+            <p class="card-content">Lo cual soluciona tus problemas de espacio para almacenar y llevar contigo lo que quieras.</p>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="descripcionProducto">
-      <div class="container">
-        <header class="section-header wow fadeInUp">
-          <h3>Ficha Tecnica</h3>
-        </header>
-
-        <div class="row">
-          <div class="col-lg-12 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-            <p class="description">Descripción.
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Tapa charola"
+              src="../../../../../assets/images/caracteristicas/20_Tapa.png">
+          </div>
+          <div class="col-10">
+            <h6 class="card-title">Tapa charola</h6>
+            <p class="card-content">
+              El diseño innovador de su tapa-charola le permite sobresalir de otras hieleras convencionales brindandote mayor comodidad de disfrutar tus bebidas.
             </p>
           </div>
-
-        </div>
-        <div class="row">
-            <embed src="../../../../../assets/pdf/productos/cadena-fria/hielera/FICHA TECNICA_HIELERA_ALFA GAMMA.pdf" type="application/pdf" width="100%" height="600px" />
         </div>
       </div>
-    </section>
-  </main>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Impresion lateral"
+              src="../../../../../assets/images/caracteristicas/22_area_impresion.png">
+          </div>
+          <div class="col-10">
+            <h6 class="card-title">Áreas de impresión lateral</h6>
+            <p class="card-content">26x16cm.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 md:col-6">
+        <div class="row flex justify-content-center">
+          <div class="col-2 md:col-1 image-container">
+            <img alt="Imprime logo"
+              src="../../../../../assets/images/caracteristicas/21_imprime_logo.png">
+          </div>
+          <div class="col-10">
+            <h6 class="card-title">Imprime tu logo</h6>
+            <p class="card-content">Incrementa tus ventas y refuerza la imagen de tu empresa o negocio imprimiendo tu logo en las partes laterlaes de la hielera.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!--Sección de multimedia-->
+
+  <div class="row pt-6">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-6 text-center">
+        <p class="anteTituloBanner">MULTIMEDIA</p>
+      </div>
+    </div>
+  </div>
+  <div class="row p-5 flex justify-content-around">
+    <div class="p-fluid grid flex justify-content-evenly">
+      <div class="col-6 md:col-4 flex justify-content-center">
+        <p-image
+          src='../../../../../assets/images/productos/cadena-fria/hielera/aplicaciones/hielera1.png'
+          alt='Aplicacion_1' width="100%"
+          [preview]="true"></p-image>
+      </div>
+    </div>
+  </div>
+
+  <!--Sección de ficha técnica-->
+
+  <div class="row pt-6">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-6 text-center">
+        <p class="anteTituloBanner">SOPORTE</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row pt-5">
+      <div class="p-fluid grid flex justify-content-center">
+        <h6 class="fichaTecnica">Ficha técnica</h6>
+      </div>
+    </div>
+  </div>
+  <div class="row p-5 flex justify-content-around">
+    <div class="p-fluid grid flex justify-content-center">
+      <div class="col-8">
+        <embed
+          src="../../../../../assets/pdf/productos/cadena-fria/hielera/FICHA TECNICA_HIELERA_ALFA GAMMA.pdf" type="application/pdf" width="100%"
+          height="600px"/>
+      </div>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>

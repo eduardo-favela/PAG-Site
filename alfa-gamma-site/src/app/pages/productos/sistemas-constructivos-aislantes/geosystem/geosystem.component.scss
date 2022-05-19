@@ -1,101 +1,154 @@
-/*     descripcionProducto    */
-#descripcionProducto {
-  /*background: #fff;
-  background: url("../img/fotovoltaico1.jpg") center top no-repeat fixed; */
-  /*background: linear-gradient(rgba(33, 55, 22, 0), rgba(0, 0, 0, 0.1)), url(../img/alfa/height-sin-fondo.png) fixed center center;*/
-  background-size: cover;
-  padding: 60px 0 40px 0;
+@font-face {
+  font-family: "Karla-Variable";
+  src: url("../../../../../assets/css/fonts/Karla-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../../../../../assets/css/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../../../../../assets/css/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../../../../../assets/css/fonts/Poppins-SemiBold.ttf");
 }
 
-#descripcionProducto .box {
-  margin-bottom: 30px;
-}
-
-#descripcionProducto .icon {
-  float: left;
-}
-
-#descripcionProducto .icon i {
-  color: #9d162e; /*COLOR VERDE FUERTE*/
-  font-size: 36px;
-  line-height: 1;
-  transition: 0.5s;
-}
-
-#descripcionProducto .title {
-  margin-left: 60px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-#descripcionProducto .title a {
-  color: #111;
-}
-
-#descripcionProducto .box:hover .title a {
-  color: #9d162e;
-}
-
-#descripcionProducto .description {
-  font-size: 14px;
-  margin-left: 60px;
-  line-height: 24px;
-  margin-bottom: 0;
-}
-
-
-
-/* Sections Header
---------------------------------*/
-.section-header {
-  padding-inline: 15%;
-}
-
-.section-header h3 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 32px;
-  color: #111;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: 700;
+.image-wrapper {
+  display: inline-block;
   position: relative;
-  padding-bottom: 15px;
-  /*margin-top: 25px;  QUITARLE SEPARACCION TITULOS  */
+  /* this will center the image in the container */
+  margin: 0 auto;
 }
 
-.section-header h3::before {
-  content: '';
+.contenidoBanner {
+  font-family: Poppins-Regular;
+  color: #868686;
+}
+
+.bannerText {
   position: absolute;
-  display: block;
-  width: 120px;
-  height: 1px;
-  background: #ddd;
-  bottom: 1px;
-  left: calc(50% - 60px);
+  top: 0;
 }
 
-.section-header h3::after {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: #9d162e; /* #18d26e;*/
-  bottom: 0;
-  left: calc(50% - 20px);
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.section-header p {
-  font-family: "Open Sans", sans-serif;
-  text-align: center;
-  padding-bottom: 30px;
-  color: #333;
+.card-title {
+  font-size: 1.5rem;
+  font-family: Poppins-SemiBold;
+  color: #2D2D2D;
 }
 
-p, h3{
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.card-content {
+  font-family: Karla-Variable;
+  color: #868686;
+}
+
+/* @media screen and (max-width: 1000px) {
+  .contenidoBanner {
+    font-family: Poppins-Regular;
+    color: #868686;
+    max-height: 20vh;
+    overflow: hidden;
+    display: -webkit-box;
+  }
+} */
+
+@media screen and (max-width: 1220px) {
+  /* Pantallas pequeñas de hasta 600px (celulares) */
+  .bannerText {
+    padding: 0;
+    margin-left: 8%;
+    position: absolute;
+    top: 0;
+    margin-top: 15%;
+  }
+
+  .image-container img {
+    width: 150%;
+  }
+
+  .contenidoBanner {
+    max-height: 10vh;
+    overflow: hidden;
+    display: -webkit-box;
+  }
+
+  .anteTituloBanner {
+    color: #d2313b;
+    font-size: 1.2rem;
+    margin: 0;
+    font-family: Poppins-Regular;
+  }
+
+  .titulo {
+    color: #2d2d2d;
+    font-size: 6vw;
+    font-family: Poppins-Bold;
+  }
+
+  .tituloBanner {
+    color: #2d2d2d;
+    font-size: 3rem;
+    font-family: Poppins-Bold;
+  }
+
+  .certImg {
+    width: 150%;
+  }
+
+  .fichaTecnica{
+    color: #2d2d2d;
+    font-size: 1.8rem;
+    font-family: Poppins-Bold;
+  }
+}
+
+@media screen and (min-width: 1221px) {
+  /* Pantallas más grandes de 1221px (computadoras, pantalas etc) */
+  .bannerText {
+    padding: 0;
+    margin-left: 8%;
+    position: absolute;
+    top: 0;
+    margin-top: 15%;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+
+  .anteTituloBanner {
+    color: #d2313b;
+    font-size: 1.3rem;
+    margin: 0;
+    font-family: Poppins-Regular;
+  }
+
+  .titulo {
+    color: #2d2d2d;
+    font-size: 3rem;
+    font-family: Poppins-Bold;
+  }
+
+  .tituloBanner {
+    color: #2d2d2d;
+    font-size: 5rem;
+    font-family: Poppins-Bold;
+  }
+
+  .certImg {
+    width: 80%;
+  }
+
+  .fichaTecnica{
+    color: #2d2d2d;
+    font-size: 2.5rem;
+    font-family: Poppins-Bold;
+  }
 }

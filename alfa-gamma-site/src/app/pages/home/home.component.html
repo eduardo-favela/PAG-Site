@@ -2,17 +2,21 @@
 <app-wpp-floating></app-wpp-floating>
 
 <div class="container-fluid">
-  <div class="grid">
-    <div class="col-12">
+  <div class="p-fluid grid">
+    <div class="col-12 image-wrapper">
       <img [style]="{'width':'100%'}"
         src="../../../assets/images/carousel/bannerInicio.jpg"
         alt="BannerInicio">
+      <div class="col-6 bannerText">
+        <p class="anteTituloBanner">EPS/EPP PARA LA</p>
+        <h1 class="tituloBanner">Construcción</h1>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="p-fluid grid flex justify-content-center">
       <div class="col-6 text-center">
-        <p class="anteTitulo">ALFA-GAMMA UNA EMPRESA</p>
+        <p class="anteTituloBanner">ALFA-GAMMA UNA EMPRESA</p>
         <h1 class="titulo">Certificada</h1>
       </div>
     </div>
@@ -76,7 +80,8 @@
             <img alt="Visión" src="../../../assets/images/empresa/vision.png">
           </div>
         </div>
-        <p-card [style]="{'box-shadow':'none'}" class="text-center" header="V I S I Ó N">
+        <p-card [style]="{'box-shadow':'none'}" class="text-center" header="V I
+          S I Ó N">
           <p>Ser un grupo que se distingue internacionalmente por el nivel de
             calidad, rentabilidad y eficiencia en sus productos y servicios.</p>
         </p-card>
@@ -88,7 +93,8 @@
             <img alt="Misión" src="../../../assets/images/empresa/mision.png">
           </div>
         </div>
-        <p-card [style]="{'box-shadow':'none'}" class="text-center" header="M I S I Ó N">
+        <p-card [style]="{'box-shadow':'none'}" class="text-center" header="M I
+          S I Ó N">
           <p>Satisfacer las necesidades de nuestros clientes con productos de
             poliestireno expendido y otros plásticos de calidad. Brindando
             bienestar personal y rentabilidad a los accionistas, en armonía con
@@ -102,41 +108,46 @@
             <img alt="Valores" src="../../../assets/images/empresa/valores.png">
           </div>
         </div>
-        <p-card [style]="{'box-shadow':'none'}" class="text-center" header="V A L O R E S">
+        <p-card [style]="{'box-shadow':'none'}" class="text-center" header="V A
+          L O R E S">
           <p>
             Honestidad<br/>
-            Respeto<br/>
-            Tolerancia<br/>
-            Actitud de servicio<br/>
-            Trabajo en equipo<br/>
-            Creatividad
-            <br/></p>
-        </p-card>
-      </div>
-    </div>
-  </div>
-  <div class="row pt-8 flex justify-content-center">
-    <div class="col-3 text-center">
-      <p class="anteTituloBanner">Multimedia</p>
-    </div>
-  </div>
-  <div class="row pt-8">
-    <div class="col-6 text-end">
-      <h1 class="tituloBanner">Multiples</h1>
-      <h1 class="tituloBanner">Aplicaciones</h1>
-      <p class="contenidoBanner">Poliestireno Alfa-Gamma se compromete a fabricar y comercializar productos de poliestireno expandido y otros plásticos
-        de calidad que satisfagan los requisitos del cliente y objetivos estratégicos organizacionales; con procesos, documentos
-        y personal competente; mejorando continuamente la eficacia del sistema gestión de calidad.</p>
-    </div>
-    <div class="col-6 text-end">
+              Respeto<br/>
+                Tolerancia<br/>
+                  Actitud de servicio<br/>
+                    Trabajo en equipo<br/>
+                      Creatividad
+                      <br/></p>
+                    </p-card>
+                  </div>
+                </div>
+              </div>
+              <div class="row pt-6 flex justify-content-center">
+                <div class="col-3 text-center">
+                  <p class="anteTituloBanner">Multimedia</p>
+                </div>
+              </div>
+              <div class="row pt-4 flex justify-content-evenly">
+                <div class="col-6 md:col-4 text-end">
+                  <h1 class="tituloBanner">Multiples</h1>
+                  <h1 class="tituloBanner">Aplicaciones</h1>
+                  <p class="contenidoBanner">Poliestireno Alfa-Gamma se
+                    compromete a fabricar y comercializar productos de
+                    poliestireno expandido y otros plásticos
+                    de calidad que satisfagan los requisitos del cliente y
+                    objetivos estratégicos organizacionales; con procesos,
+                    documentos
+                    y personal competente; mejorando continuamente la eficacia
+                    del sistema gestión de calidad.</p>
+                </div>
+                <div class="col-6 md:col-4 text-end">
+                  <video width="100%" autoplay [muted]="'muted'" loop>
+                    <source src="../../../assets/video/video_home.mp4"
+                      type="video/mp4">
+                    Your browser does not support HTML video.
+                  </video>
+                </div>
+              </div>
+            </div>
 
-    </div>
-  </div>
-</div>
-
-<div class="col-6 bannerText">
-  <p class="anteTituloBanner">EPS/EPP PARA LA</p>
-  <h1 class="tituloBanner">Construcción</h1>
-</div>
-
-<app-footer></app-footer>
+            <app-footer></app-footer>
