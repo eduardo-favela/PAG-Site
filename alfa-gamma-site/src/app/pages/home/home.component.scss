@@ -57,21 +57,11 @@
   color: #868686;
 }
 
-/* @media screen and (max-width: 1000px) {
-  .contenidoBanner {
-    font-family: Poppins-Regular;
-    color: #868686;
-    max-height: 5rem;
-    overflow: hidden;
-    display: -webkit-box;
-  }
-} */
-
 @media screen and (max-width: 1220px) {
   /* Pantallas pequeñas de hasta 1220px (celulares y tablets) */
 
   .image-container img {
-    width: 250%;
+    width: 90%;
   }
 
   .contenidoBanner {

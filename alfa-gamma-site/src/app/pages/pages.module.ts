@@ -54,6 +54,10 @@ import { BlogComponent } from './blog/blog.component';
 import { PostComponent } from './post/post.component';
 import {ImageModule} from 'primeng/image';
 import { ClimateComponent } from './productos/aislantes/climate/climate.component';
+import { EppComponent } from './materiales/epp/epp.component';
+import { EpsComponent } from './materiales/eps/eps.component';
+import { ArcelComponent } from './materiales/arcel/arcel.component';
+import { BeneficiosComponent } from './beneficios/beneficios.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +81,11 @@ import { ClimateComponent } from './productos/aislantes/climate/climate.componen
     ContactoComponent,
     BlogComponent,
     PostComponent,
-    ClimateComponent
+    ClimateComponent,
+    EppComponent,
+    EpsComponent,
+    ArcelComponent,
+    BeneficiosComponent
   ],
   imports: [
     BrowserModule,

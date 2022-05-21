@@ -1,18 +1,18 @@
 @font-face {
   font-family: "Karla-Variable";
-  src: url("../../../assets/css/fonts/Karla-VariableFont_wght.ttf");
+  src: url("../../../../assets/css/fonts/Karla-VariableFont_wght.ttf");
 }
 @font-face {
   font-family: "Poppins-Bold";
-  src: url("../../../assets/css/fonts/Poppins-Bold.ttf");
+  src: url("../../../../assets/css/fonts/Poppins-Bold.ttf");
 }
 @font-face {
   font-family: "Poppins-Regular";
-  src: url("../../../assets/css/fonts/Poppins-Regular.ttf");
+  src: url("../../../../assets/css/fonts/Poppins-Regular.ttf");
 }
 @font-face {
   font-family: "Poppins-SemiBold";
-  src: url("../../../assets/css/fonts/Poppins-SemiBold.ttf");
+  src: url("../../../../assets/css/fonts/Poppins-SemiBold.ttf");
 }
 
 .image-wrapper {
@@ -27,18 +27,16 @@
   color: #868686;
 }
 
+.bannerText {
+  position: absolute;
+  top: 0;
+}
+
+
 .bannerText2 {
   position: absolute;
   top: 0;
   margin-left: 50%;
-}
-
-.bannerText {
-  padding: 0;
-  margin-left: 8%;
-  position: absolute;
-  top: 0;
-  margin-top: 15%;
 }
 
 .image-container {
@@ -47,21 +45,29 @@
   justify-content: center;
 }
 
-::ng-deep .p-card-title {
+.card-title {
+  font-size: 1.5rem;
   font-family: Poppins-SemiBold;
   color: #2D2D2D;
 }
 
-::ng-deep .p-card-content {
-  font-family: Poppins-Regular;
+.card-content {
+  font-family: Karla-Variable;
   color: #868686;
 }
 
 @media screen and (max-width: 1220px) {
-  /* Pantallas pequeñas de hasta 1220px (celulares y tablets) */
+  /* Pantallas pequeñas de hasta 600px (celulares) */
+  .bannerText {
+    padding: 0;
+    margin-left: 8%;
+    position: absolute;
+    top: 0;
+    margin-top: 15%;
+  }
 
   .image-container img {
-    width: 90%;
+    width: 150%;
   }
 
   .contenidoBanner {
@@ -85,17 +91,30 @@
 
   .tituloBanner {
     color: #2d2d2d;
-    font-size: 6vw;
+    font-size: 3rem;
     font-family: Poppins-Bold;
   }
 
   .certImg {
     width: 150%;
   }
+
+  .fichaTecnica{
+    color: #2d2d2d;
+    font-size: 1.8rem;
+    font-family: Poppins-Bold;
+  }
 }
 
 @media screen and (min-width: 1221px) {
-  /* Pantallas más grandes de 1221px (computadoras, pantallas etc) */
+  /* Pantallas más grandes de 1221px (computadoras, pantalas etc) */
+  .bannerText {
+    padding: 0;
+    margin-left: 8%;
+    position: absolute;
+    top: 0;
+    margin-top: 15%;
+  }
 
   .image-container img {
     width: 100%;
@@ -122,5 +141,11 @@
 
   .certImg {
     width: 80%;
+  }
+
+  .fichaTecnica{
+    color: #2d2d2d;
+    font-size: 2.5rem;
+    font-family: Poppins-Bold;
   }
 }

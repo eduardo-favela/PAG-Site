@@ -12,7 +12,7 @@ import { UbicacionService } from '../../services/ubicacion.service';
 export class UbicacionContactoComponent implements OnInit {
 
   uens: any = []
-  activeState : boolean[] = [];
+  activeState: boolean[] = [];
 
   constructor(private ubicacionService: UbicacionService) { }
 
@@ -50,22 +50,26 @@ export class UbicacionContactoComponent implements OnInit {
 
       switch (element.tipos_uen) {
         case 1:
-          mark.style.backgroundImage ='url(../../../assets/images/map-icons/planta.png)'
+          mark.style.backgroundImage = 'url(../../../assets/images/ubicacion/oycd.png)'
+          mark.style.width = '32px';
+          mark.style.height = '22px';
           break;
         case 2:
-          mark.style.backgroundImage ='url(../../../assets/images/map-icons/oficinacd.png)'
+          mark.style.backgroundImage = 'url(../../../assets/images/ubicacion/planta.png)'
+          mark.style.width = '25px';
+          mark.style.height = '28px';
           break;
         case 3:
-          mark.style.backgroundImage ='url(../../../assets/images/map-icons/oficinav.png)'
+          mark.style.backgroundImage = 'url(../../../assets/images/ubicacion/ov.png)'
+          mark.style.width = '25px';
+          mark.style.height = '28px';
           break;
         default:
           break;
       }
       /* mark.style.backgroundImage = (()?('url(../../../assets/images/map-icons/planta.png)'):('')); */
-      mark.style.width = '28px';
-      mark.style.height = '28px';
-      mark.style.borderRadius = '50%';
-      mark.onclick = () => {this.listener(index)};
+      /* mark.style.borderRadius = '50%'; */
+      mark.onclick = () => { this.listener(index) };
       this.activeState.push(false);
       new mapboxgl.Marker(mark).setLngLat([element.longitud, element.latitud])
         .setPopup(new mapboxgl.Popup().setHTML(`<h6>Sucursal ${element.nombre_uen}</h6>`))
@@ -74,6 +78,6 @@ export class UbicacionContactoComponent implements OnInit {
   }
 
   listener(index) {
-    this.activeState[index]= !this.activeState[index];
+    this.activeState[index] = !this.activeState[index];
   }
 }

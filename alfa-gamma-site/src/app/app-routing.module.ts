@@ -19,6 +19,10 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { PostComponent } from './pages/post/post.component'
 import { ClimateComponent } from './pages/productos/aislantes/climate/climate.component';
+import { EppComponent } from './pages/materiales/epp/epp.component';
+import { EpsComponent } from './pages/materiales/eps/eps.component';
+import { ArcelComponent } from './pages/materiales/arcel/arcel.component';
+import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
 
 const routes: Routes = [
   {
@@ -80,6 +84,22 @@ const routes: Routes = [
   {
     path: 'cadena-fria/hielera',
     component: HieleraComponent
+  },
+  {
+    path:'epp',
+    component: EppComponent
+  },
+  {
+    path: 'eps',
+    component: EpsComponent
+  },
+  {
+    path: 'arcel',
+    component: ArcelComponent
+  },
+  {
+    path: 'beneficios',
+    component: BeneficiosComponent
   },
   {
     path: 'ubicacion-contacto',

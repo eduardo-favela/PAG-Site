@@ -37,7 +37,7 @@ var getUens = /*#__PURE__*/function () {
           case 2:
             db = _context.sent;
             _context.next = 5;
-            return db.query("SELECT id_uen, nombre_uen, direccion, telefono,\n    email, longitud, latitud, estado, ciudad\n    FROM uens\n    INNER JOIN estados ON uens.estados_idestados=estados.idestados\n    INNER JOIN ciudades ON uens.ciudades_id_ciudad=ciudades.id_ciudad;");
+            return db.query("SELECT id_uen, nombre_uen, direccion, telefono,\n    email, longitud, latitud, estado, ciudad, tipos_uen\n    FROM uens\n    INNER JOIN estados ON uens.estados_idestados=estados.idestados\n    INNER JOIN ciudades ON uens.ciudades_id_ciudad=ciudades.id_ciudad;");
 
           case 5:
             _yield$db$query = _context.sent;

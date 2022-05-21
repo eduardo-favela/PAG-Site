@@ -1,41 +1,80 @@
 <app-menu></app-menu>
-<main id="main">
-  <section id="descripcionProducto">
-    <div class="container">
-      <app-wpp-floating></app-wpp-floating>
-      <header class="section-header wow fadeInUp">
-        <h3>Visítanos</h3>
-      </header>
-      <div class="row pt-3">
-        <div class="p-fluid grid justify-content-around">
-          <div class="col-12 md:col-8">
-            <div id="map" class="map-container"> </div>
-          </div>
-          <div class="col-12 md:col-4">
-            <div class="row justify-content-center">
-              <div class="col-12 md:col-3 text-center">
-                <h4>Sucursales</h4>
-              </div>
-            </div>
-            <div class="row">
-              <p-scrollPanel [style]="{width: '100%'}">
-                <p-accordion>
-                  <p-accordionTab [(selected)]="activeState[i]" *ngFor="let uen of uens; index as i;" header={{uen.nombre_uen}}>
-                    <p-divider></p-divider>
-                      <p>{{uen.direccion}}</p>
-                      <p>{{uen.estado}}, {{uen.ciudad}}</p>
-                      <p>{{uen.telefono}}</p>
-                      <p>{{uen.email}}</p>
-                    <p-divider></p-divider>
-                  </p-accordionTab>
-                </p-accordion>
-              </p-scrollPanel>
-            </div>
-          </div>
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="p-fluid grid">
+      <div class="col-12 image-wrapper">
+        <img [style]="{'width':'100%'}"
+          src="../../../assets/images/ubicacion/IMG05.jpg"
+          alt="BannerInicio">
+        <div class="col-6 bannerText">
+          <p class="anteTituloBanner">Conozca nuestra</p>
+          <h1 class="tituloBanner">Ubicación</h1>
         </div>
       </div>
     </div>
-  </section>
-</main>
+  </div>
 
+  <div class="row p-8">
+    <div class="p-fluid grid justify-content-center">
+      <div class="col-3 text-center">
+        <p class="anteTituloBanner">MAPA</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="p-fluid grid justify-content-evenly">
+      <div class="col-2 md:col-1">
+        <div class="row mb-3">
+          <img [style]="{'width':'100%'}" src="../../../assets/images/ubicacion/Icon05.png" alt="ubicacion">
+        </div>
+        <p class="contenidoBanner">Oficina de ventas</p>
+      </div>
+      <div class="col-2 md:col-1">
+        <div class="row mb-5">
+          <img [style]="{'width':'100%'}" src="../../../assets/images/ubicacion/Icon06.png" alt="ubicacion">
+        </div>
+        <p class="contenidoBanner">Planta</p>
+      </div>
+      <div class="col-2 md:col-1">
+        <div class="row mb-6">
+          <img [style]="{'width':'100%'}" src="../../../assets/images/ubicacion/Icon07.png" alt="ubicacion">
+        </div>
+        <p class="contenidoBanner">Oficina y centro de distribución</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row pt-3">
+    <div class="p-fluid grid justify-content-around">
+      <div class="col-12 md:col-8">
+        <div id="map" class="map-container"> </div>
+      </div>
+      <div class="col-12 md:col-4">
+        <div class="row justify-content-center">
+          <div class="col-12 md:col-3 text-center">
+            <h4>Sucursales</h4>
+          </div>
+        </div>
+        <div class="row">
+          <p-scrollPanel [style]="{width: '100%'}">
+            <p-accordion>
+              <p-accordionTab [(selected)]="activeState[i]" *ngFor="let uen of
+                uens; index as i;" header={{uen.nombre_uen}}>
+                <p-divider></p-divider>
+                <p>{{uen.direccion}}</p>
+                <p>{{uen.estado}}, {{uen.ciudad}}</p>
+                <p>{{uen.telefono}}</p>
+                <p>{{uen.email}}</p>
+                <p-divider></p-divider>
+              </p-accordionTab>
+            </p-accordion>
+          </p-scrollPanel>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>

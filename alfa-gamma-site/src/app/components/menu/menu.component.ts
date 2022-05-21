@@ -145,23 +145,24 @@ export class MenuComponent implements OnInit {
           {
             label: 'EPS',
             styleClass: 'menuitem',
-
+            routerLink: '/eps'
           },
           {
             label: 'EPP',
             styleClass: 'menuitem',
-
+            routerLink: '/epp'
           },
           {
             label: 'ARCEL',
             styleClass: 'menuitem',
+            routerLink: '/arcel'
           }
         ]
       },
       {
         label: 'BENEFICIOS',
         styleClass: 'menuitem',
-        routerLink: '/'
+        routerLink: '/beneficios'
       },
       {
         label: 'UBICACIÓN',
