@@ -23,6 +23,10 @@ import { EppComponent } from './pages/materiales/epp/epp.component';
 import { EpsComponent } from './pages/materiales/eps/eps.component';
 import { ArcelComponent } from './pages/materiales/arcel/arcel.component';
 import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
+import { BovedillaAComponent } from './pages/productos/sistemas-constructivos-aislantes/bovedilla-a/bovedilla-a.component';
+import { AlfatermComponent } from './pages/productos/aislantes/alfaterm/alfaterm.component';
+import { MoldeoComponent } from './pages/productos/aplicacion-especial/moldeo/moldeo.component';
+import { AgriculturaComponent } from './pages/productos/aplicacion-especial/agricultura/agricultura.component';
 
 const routes: Routes = [
   {
@@ -54,6 +58,10 @@ const routes: Routes = [
     component: ClimateComponent
   },
   {
+    path: 'aislantes/alfaterm',
+    component: AlfatermComponent
+  },
+  {
     path: 'sistemas-constructivos-aislantes/panel',
     component: PanelComponent
   },
@@ -74,6 +82,10 @@ const routes: Routes = [
     component: AmvicComponent
   },
   {
+    path:'sistemas-constructivos-aislantes/bovedilla-a',
+    component:BovedillaAComponent
+  },
+  {
     path: 'decorativos/plafon',
     component: PlafonComponent
   },
@@ -84,6 +96,14 @@ const routes: Routes = [
   {
     path: 'cadena-fria/hielera',
     component: HieleraComponent
+  },
+  {
+    path: 'aplicacion-especial/moldeo',
+    component: MoldeoComponent
+  },
+  {
+    path: 'aplicacion-especial/agricultura',
+    component: AgriculturaComponent
   },
   {
     path:'epp',
@@ -116,7 +136,7 @@ const routes: Routes = [
   {
     path: 'post/:idPost',
     component: PostComponent,
-  }
+  },
 ];
 
 @NgModule({

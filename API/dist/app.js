@@ -20,6 +20,10 @@ var _blog = _interopRequireDefault(require("./routes/blog"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var app = (0, _express["default"])();
+/* const corsOptions = {
+    origin: 'http://facebook.com'
+} */
+
 app.use((0, _cors["default"])());
 app.use((0, _morgan["default"])('dev'));
 app.use(_express["default"].json());

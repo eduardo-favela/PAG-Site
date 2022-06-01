@@ -48,6 +48,11 @@ export class MenuComponent implements OnInit {
             styleClass: 'menuitem',
             items: [
               {
+                label:'Alfaterm',
+                styleClass:'menuitem',
+                routerLink:'/aislantes/alfaterm'
+              },
+              {
                 label: 'Climate',
                 styleClass: 'menuitem',
                 routerLink: '/aislantes/climate'
@@ -65,23 +70,14 @@ export class MenuComponent implements OnInit {
             ]
           },
           {
-            label: 'Aplicación especial',
-            styleClass: 'menuitem',
-            items: [
-              {
-                label: 'Moldeo',
-                styleClass: 'menuitem',
-              },
-              {
-                label: 'Agricultura',
-                styleClass: 'menuitem',
-              }
-            ]
-          },
-          {
             label: 'Sistemas Constructivos y Aislantes',
             styleClass: 'menuitem',
             items: [
+              {
+                label: 'AMVIC',
+                styleClass: 'menuitem',
+                routerLink: '/sistemas-constructivos-aislantes/amvic'
+              },
               {
                 label: 'Panel',
                 styleClass: 'menuitem',
@@ -93,14 +89,14 @@ export class MenuComponent implements OnInit {
                 routerLink: '/sistemas-constructivos-aislantes/bovedilla-e'
               },
               {
-                label: 'AMVIC',
-                styleClass: 'menuitem',
-                routerLink: '/sistemas-constructivos-aislantes/amvic'
-              },
-              {
                 label: 'Bovedilla alma abierta',
                 styleClass: 'menuitem',
                 routerLink: '/sistemas-constructivos-aislantes/bovedilla-aa'
+              },
+              {
+                label:'Bovedilla aperaltada',
+                styleClass:'menuitem',
+                routerLink:'/sistemas-constructivos-aislantes/bovedilla-a'
               },
               {
                 label: 'Geosystem',
@@ -126,6 +122,22 @@ export class MenuComponent implements OnInit {
             ]
           },
           {
+            label: 'Aplicación especial',
+            styleClass: 'menuitem',
+            items: [
+              {
+                label: 'Agricultura',
+                styleClass: 'menuitem',
+                routerLink: '/aplicacion-especial/agricultura'
+              },
+              {
+                label: 'Moldeo',
+                styleClass: 'menuitem',
+                routerLink: '/aplicacion-especial/moldeo'
+              },
+            ]
+          },
+          {
             label: 'Cadena Fría',
             styleClass: 'menuitem',
             items: [
@@ -135,7 +147,7 @@ export class MenuComponent implements OnInit {
                 routerLink: '/cadena-fria/hielera'
               }
             ]
-          }
+          },
         ]
       },
       {

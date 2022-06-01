@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Karla-Variable";
+  src: url("../../../../../assets/css/fonts/Karla-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../../../../../assets/css/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../../../../../assets/css/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../../../../../assets/css/fonts/Poppins-SemiBold.ttf");
+}
+
+.image-wrapper {
+  display: inline-block;
+  position: relative;
+  /* this will center the image in the container */
+  margin: 0 auto;
+}
+
+.contenidoBanner {
+  font-family: Poppins-Regular;
+  color: #868686;
+}
+
+.bannerText {
+  position: absolute;
+  top: 0;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-family: Poppins-SemiBold;
+  color: #2D2D2D;
+}
+
+.card-content {
+  font-family: Karla-Variable;
+  color: #868686;
+}
+
+@media screen and (max-width: 1000px) {
+  .contenidoBanner {
+    font-family: Poppins-Regular;
+    color: #868686;
+    max-height: 20vh;
+    overflow: hidden;
+    display: -webkit-box;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Pantallas pequeñas de hasta 600px (celulares) */
+  .bannerText {
+    padding: 0;
+    margin-left: 8%;
+    position: absolute;
+    top: 0;
+    margin-top: 15%;
+  }
+
+  .image-container img {
+    width: 150%;
+  }
+
+  .contenidoBanner {
+    max-height: 10vh;
+    overflow: hidden;
+    display: -webkit-box;
+  }
+
+  .anteTituloBanner {
+    color: #d2313b;
+    font-size: 3vw;
+    margin: 0;
+    font-family: Poppins-Regular;
+  }
+
+  .titulo {
+    color: #2d2d2d;
+    font-size: 6vw;
+    font-family: Poppins-Bold;
+  }
+
+  .tituloBanner {
+    color: #2d2d2d;
+    font-size: 3rem;
+    font-family: Poppins-Bold;
+  }
+
+  .certImg {
+    width: 150%;
+  }
+
+  .fichaTecnica{
+    color: #2d2d2d;
+    font-size: 1.8rem;
+    font-family: Poppins-Bold;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  /* Pantallas más grandes de 601px (tablets, computadoras, etc) */
+  .bannerText {
+    padding: 0;
+    margin-left: 8%;
+    position: absolute;
+    top: 0;
+    margin-top: 15%;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+
+  .anteTituloBanner {
+    color: #d2313b;
+    font-size: 1.3rem;
+    margin: 0;
+    font-family: Poppins-Regular;
+  }
+
+  .titulo {
+    color: #2d2d2d;
+    font-size: 3rem;
+    font-family: Poppins-Bold;
+  }
+
+  .tituloBanner {
+    color: #2d2d2d;
+    font-size: 5rem;
+    font-family: Poppins-Bold;
+  }
+
+  .certImg {
+    width: 80%;
+  }
+
+  .fichaTecnica{
+    color: #2d2d2d;
+    font-size: 2.5rem;
+    font-family: Poppins-Bold;
+  }
+}

@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Karla-Variable";
+  src: url("../../../../../assets/css/fonts/Karla-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../../../../../assets/css/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../../../../../assets/css/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../../../../../assets/css/fonts/Poppins-SemiBold.ttf");
+}
+
+.image-wrapper {
+  display: inline-block;
+  position: relative;
+  /* this will center the image in the container */
+  margin: 0 auto;
+}
+
+.contenidoBanner {
+  font-family: Poppins-Regular;
+  color: #868686;
+}
+
+.bannerText2 {
+  position: absolute;
+  top: 0;
+  margin-left: 50%;
+}
+
+.bannerText {
+  padding: 0;
+  margin-left: 8%;
+  position: absolute;
+  top: 0;
+  margin-top: 15%;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .p-card-title {
+  font-family: Poppins-SemiBold;
+  color: #2D2D2D;
+}
+
+::ng-deep .p-card-content {
+  font-family: Poppins-Regular;
+  color: #868686;
+}
+
+@media screen and (max-width: 1220px) {
+  /* Pantallas pequeñas de hasta 1220px (celulares y tablets) */
+
+  .image-container img {
+    width: 90%;
+  }
+
+  .contenidoBanner {
+    max-height: 10vh;
+    overflow: hidden;
+    display: -webkit-box;
+  }
+
+  .anteTituloBanner {
+    color: #d2313b;
+    font-size: 1.2rem;
+    margin: 0;
+    font-family: Poppins-Regular;
+  }
+
+  .titulo {
+    color: #2d2d2d;
+    font-size: 6vw;
+    font-family: Poppins-Bold;
+  }
+
+  .tituloBanner {
+    color: #2d2d2d;
+    font-size: 6vw;
+    font-family: Poppins-Bold;
+  }
+
+  .certImg {
+    width: 150%;
+  }
+}
+
+@media screen and (min-width: 1221px) {
+  /* Pantallas más grandes de 1221px (computadoras, pantallas etc) */
+
+  .image-container img {
+    width: 100%;
+  }
+
+  .anteTituloBanner {
+    color: #d2313b;
+    font-size: 1.3rem;
+    margin: 0;
+    font-family: Poppins-Regular;
+  }
+
+  .titulo {
+    color: #2d2d2d;
+    font-size: 3rem;
+    font-family: Poppins-Bold;
+  }
+
+  .tituloBanner {
+    color: #2d2d2d;
+    font-size: 5rem;
+    font-family: Poppins-Bold;
+  }
+
+  .certImg {
+    width: 80%;
+  }
+}

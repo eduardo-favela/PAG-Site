@@ -58,6 +58,10 @@ import { EppComponent } from './materiales/epp/epp.component';
 import { EpsComponent } from './materiales/eps/eps.component';
 import { ArcelComponent } from './materiales/arcel/arcel.component';
 import { BeneficiosComponent } from './beneficios/beneficios.component';
+import { AlfatermComponent } from './productos/aislantes/alfaterm/alfaterm.component';
+import { BovedillaAComponent } from './productos/sistemas-constructivos-aislantes/bovedilla-a/bovedilla-a.component';
+import { MoldeoComponent } from './productos/aplicacion-especial/moldeo/moldeo.component';
+import { AgriculturaComponent } from './productos/aplicacion-especial/agricultura/agricultura.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +89,13 @@ import { BeneficiosComponent } from './beneficios/beneficios.component';
     EppComponent,
     EpsComponent,
     ArcelComponent,
-    BeneficiosComponent
+    BeneficiosComponent,
+    AlfatermComponent,
+    BovedillaAComponent,
+    BovedillaAComponent,
+    AlfatermComponent,
+    MoldeoComponent,
+    AgriculturaComponent
   ],
   imports: [
     BrowserModule,
