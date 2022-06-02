@@ -72,8 +72,8 @@ export const enviarCorreo = async (req, res) => {
             port: 3535,
             secure: false, // use TLS
             auth: {
-                user: "coord.softweb@alfagamma.com.mx",
-                pass: "USCedu0902#",
+                user: "pag_web@alfagamma.com.mx",
+                pass: "nirqlk(2gor5",
             },
             tls: {
                 // do not fail on invalid certs
@@ -82,7 +82,7 @@ export const enviarCorreo = async (req, res) => {
         });
 
         let mailDetails = {
-            from: 'coord.softweb@alfagamma.com.mx',
+            from: 'pag_web@alfagamma.com.mx',
             to: ['eduardo-favela@outlook.com','r.elizondo@alfagamma.com.mx'],
             subject: 'Reporte de servicio',
             html: `
