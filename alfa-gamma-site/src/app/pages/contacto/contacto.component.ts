@@ -144,7 +144,7 @@ export class ContactoComponent implements OnInit {
           $('#uMedidaSelect').addClass('ng-invalid ng-dirty')
         }
 
-        this.saveContact()
+        this.saveContact(token)
       });
   }
 
@@ -181,14 +181,14 @@ export class ContactoComponent implements OnInit {
     )
   }
 
-  saveContact() {
+  saveContact(token) {
     if (this.contacto.infoSolicitada && this.contacto.productoSelected && this.contacto.cantidad && this.contacto.nombre && this.contacto.apellidos && this.contacto.telefono && this.contacto.email && this.contacto.sucursal && this.contacto.estado && this.contacto.ciudad && this.contacto.direccion && this.contacto.comentarios && this.contacto.empresa) {
       if (this.contacto.email.includes('@')) {
         if (this.contacto.telefono.toString().length == 10) {
           this.contactoService.guardarContacto(this.contacto).subscribe(
             res => {
               this.contactSavedId = res
-              this.sendContact()
+              this.sendContact(token)
             },
             err => console.error(err)
           )
@@ -210,8 +210,8 @@ export class ContactoComponent implements OnInit {
     }
   }
 
-  sendContact() {
-    this.contactoService.enviarContacto({ contactId: this.contactSavedId.insertId }).subscribe(
+  sendContact(token) {
+    this.contactoService.enviarContacto({ token: token, contactId: this.contactSavedId.insertId }).subscribe(
       res => {
         if (res) {
           this.contacto.infoSolicitada = null;

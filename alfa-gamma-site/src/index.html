@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Alfa-Gamma Site</title>
+    <title>Alfa-Gamma</title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -16,6 +16,29 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css'
       rel='stylesheet' />
 
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyC0Aswyop6WwAxuuDuTCGCMuB87lkSv9_o",
+        authDomain: "alfagammasite.firebaseapp.com",
+        projectId: "alfagammasite",
+        storageBucket: "alfagammasite.appspot.com",
+        messagingSenderId: "941498188022",
+        appId: "1:941498188022:web:07189314cb98ca23e0acd7",
+        measurementId: "G-BJYLCZXZF6"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </head>
   <body>
     <app-root></app-root>

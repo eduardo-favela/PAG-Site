@@ -122,7 +122,9 @@ export class MenuComponent implements OnInit {
             ]
           },
           {
-            label: 'Aplicación especial',
+            label: 'Industria',
+            styleClass: 'menuitem'
+            /* label: 'Aplicación especial',
             styleClass: 'menuitem',
             items: [
               {
@@ -135,7 +137,7 @@ export class MenuComponent implements OnInit {
                 styleClass: 'menuitem',
                 routerLink: '/aplicacion-especial/moldeo'
               },
-            ]
+            ] */
           },
           {
             label: 'Cadena Fría',
