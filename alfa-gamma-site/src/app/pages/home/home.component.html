@@ -1,18 +1,33 @@
 <app-menu></app-menu>
-<app-wpp-floating></app-wpp-floating>
 
 <div class="container-fluid">
   <div class="p-fluid grid">
-    <div class="col-12 image-wrapper">
-      <img [style]="{'width':'100%'}"
+    <div class="col-12 p-0">
+
+      <p-galleria [value]="images" [numVisible]="5" [responsiveOptions]="responsiveOptions"
+        [circular]="true" [showItemNavigators]="true" [showIndicatorsOnItem]="true"
+        [showThumbnails]="false" [showIndicators]="false" [showItemNavigatorsOnHover]="true"
+        [changeItemOnIndicatorHover]="true" indicatorsPosition="top" [autoPlay]="true" [transitionInterval]="5000"
+        [showIndicatorsOnItem]="true" [style]="{'min-height':'100vh'}">
+        <ng-template pTemplate="item" let-item>
+          <div class="image-wrapper">
+            <img [src]="item.previewImageSrc" style="width: 100%;  display: block;" />
+            <div class="col-6 bannerText">
+              <h1 class="tituloBanner">{{item.title}}</h1>
+            </div>
+          </div>
+        </ng-template>
+      </p-galleria>
+
+<!--       <img [style]="{'width':'100%'}"
         src="../../../assets/images/carousel/bannerInicio.jpg"
         alt="BannerInicio">
       <div class="col-6 bannerText">
         <h1 class="tituloBanner">Construcción</h1>
-      </div>
+      </div> -->
     </div>
   </div>
-  <div class="row">
+  <div class="row pt-8">
     <div class="p-fluid grid flex justify-content-center">
       <div class="col-6 text-center">
         <p class="anteTituloBanner">ALFA-GAMMA UNA EMPRESA</p>
@@ -162,3 +177,4 @@
   </div>
 </div>
 <app-footer></app-footer>
+<app-wpp-floating></app-wpp-floating>

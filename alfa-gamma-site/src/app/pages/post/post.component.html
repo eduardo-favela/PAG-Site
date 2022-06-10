@@ -8,7 +8,12 @@
       </div>
     </div>
   </div>
-  <div class="row p-5">
+  <div class="row p-5 flex justify-content-center">
+    <div [hidden]="!loading" class="col-1" style="height: 80px;">
+      <span class="loader"></span>
+    </div>
+  </div>
+  <div class="row p-5" [hidden]="loading">
     <div class="p-fluid grid flex justify-content-center">
       <div class="col-8 text-center">
         <p class="tituloBanner">{{post.titulo}}</p>
@@ -16,22 +21,8 @@
         <hr>
       </div>
     </div>
-    <!--     <div class="col-6 md:col-6 mb-3 flex justify-content-center">
-      <p-card [style]="{'border-radius':'1rem'}">
-        <p-image [src]="post.imagen" alt="Image" width="500"
-          [preview]="true"></p-image>
-        <ng-template pTemplate="footer">
-          <p [style]="{'font-style': 'italic','font-family': 'monospace'}">{{post.fecha | date : 'dd/MM/yyyy'}}</p>
-        </ng-template>
-      </p-card>
-    </div>
-    <div class="col-4 md:col-4 mb-3 p-4" [style]="{'background': '#ffffff','border-radius': '1.5rem','opacity': '80%'}">
-      <h5>{{post.titulo}}</h5>
-      <hr>
-      <p>{{post.contenido}}</p>
-    </div> -->
   </div>
-  <div class="row p-5">
+  <div class="row p-5" [hidden]="loading">
     <div class="p-fluid grid flex justify-content-center">
       <div class="col-8">
         <img [style]="{'max-width': '100%', 'border-radius':'5%'}"
@@ -39,7 +30,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row" [hidden]="loading">
     <div class="p-fluid grid flex justify-content-center">
       <div class="col-8">
         <p class="contenidoBanner">

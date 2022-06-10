@@ -12,8 +12,14 @@ export class BlogComponent implements OnInit {
 
   posts: any = [];
   loading: boolean = true;
+  loadingPage = true;
+
 
   constructor(private blogService: BlogService, private _sanitizer: DomSanitizer) { }
+
+  ngAfterViewInit() {
+    this.loadingPage = false;
+  }
 
   ngOnInit(): void {
     this.blogService.getPosts().subscribe(
@@ -26,5 +32,9 @@ export class BlogComponent implements OnInit {
       },
       err => console.error(err)
     )
+
+    /* $(window).on('load', () => {
+      this.loadingPage = false;
+    }) */
   }
 }

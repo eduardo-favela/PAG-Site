@@ -20,10 +20,15 @@ export class PostComponent implements OnInit {
     imagen: null,
     fecha: null
   }
+  loading = true;
 
   ngOnInit(): void {
     this.idPost = this.route.snapshot.paramMap.get('idPost')
     this.getPost()
+  }
+
+  ngAfterViewInit() {
+    this.loading=false;
   }
 
   getPost() {

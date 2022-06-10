@@ -1,13 +1,21 @@
 <app-menu></app-menu>
 <app-wpp-floating></app-wpp-floating>
 
-<div class="container-fluid">
+<div [hidden]="!loadingPage" class="container-fluid">
+  <div class="row p-5 flex justify-content-center">
+    <div class="col-1" style="height: 80px;">
+      <span class="loader"></span>
+    </div>
+  </div>
+</div>
+
+<div [hidden]="loadingPage" class="container-fluid">
   <div class="row">
     <div class="p-fluid grid">
-      <div class="col-12 image-wrapper">
+      <div class="col-12 image-wrapper p-0">
         <img [style]="{'width':'100%'}"
           src="../../../assets/images/blog/IMG07.jpg"
-          alt="BannerInicio">
+          alt="BannerInicio" id="BannerPrincipal">
         <div class="col-6 bannerText">
           <p class="anteTituloBanner">Manténgase informado</p>
           <h1 class="tituloBanner">Blog</h1>
