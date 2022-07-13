@@ -82,7 +82,7 @@ var getWppNumber = /*#__PURE__*/function () {
             uen = _yield$db$query4[0];
 
             if (!(uen.length === 0)) {
-              _context2.next = 15;
+              _context2.next = 17;
               break;
             }
 
@@ -101,10 +101,13 @@ var getWppNumber = /*#__PURE__*/function () {
               }]);
             }
 
-          case 15:
+            _context2.next = 18;
+            break;
+
+          case 17:
             res.json(uen);
 
-          case 16:
+          case 18:
           case "end":
             return _context2.stop();
         }
