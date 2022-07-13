@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getUens = void 0;
+exports.getWppNumber = exports.getUens = void 0;
 
 var _database = require("../database");
 
@@ -59,3 +59,62 @@ var getUens = /*#__PURE__*/function () {
 }();
 
 exports.getUens = getUens;
+
+var getWppNumber = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(req, res) {
+    var db, _yield$db$query3, _yield$db$query4, uen, _yield$db$query5, _yield$db$query6;
+
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return (0, _database.connect)();
+
+          case 2:
+            db = _context2.sent;
+            _context2.next = 5;
+            return db.query("SELECT nombre_uen, num_wpp as telefono FROM ciudades_has_uens\n    INNER JOIN ciudades on ciudades_has_uens.ciudad = ciudades.id_ciudad\n    INNER JOIN estados on ciudades.estados_idestados = estados.idestados\n    INNER JOIN uens on ciudades_has_uens.uen = uens.id_uen\n    WHERE estado like '%".concat(req.body.estado, "%' and ciudades.ciudad like '%").concat(req.body.ciudad, "%';"));
+
+          case 5:
+            _yield$db$query3 = _context2.sent;
+            _yield$db$query4 = _slicedToArray(_yield$db$query3, 1);
+            uen = _yield$db$query4[0];
+
+            if (!(uen.length === 0)) {
+              _context2.next = 15;
+              break;
+            }
+
+            _context2.next = 11;
+            return db.query("SELECT nombre_uen, num_wpp as telefono FROM estados_has_uens\n        INNER JOIN estados on estados_has_uens.estados_has_uens_estado = estados.idestados\n        INNER JOIN uens on estados_has_uens.estados_has_uens_uens = uens.id_uen WHERE estado like '%".concat(req.body.estado, "%';"));
+
+          case 11:
+            _yield$db$query5 = _context2.sent;
+            _yield$db$query6 = _slicedToArray(_yield$db$query5, 1);
+            uen = _yield$db$query6[0];
+
+            if (uen.length === 0) {
+              res.json([{
+                nombre_uen: 'LAGUNA',
+                telefono: '8711319784'
+              }]);
+            }
+
+          case 15:
+            res.json(uen);
+
+          case 16:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+
+  return function getWppNumber(_x3, _x4) {
+    return _ref2.apply(this, arguments);
+  };
+}();
+
+exports.getWppNumber = getWppNumber;

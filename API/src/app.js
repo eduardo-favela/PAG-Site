@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors'
 import morgan from 'morgan'
 import './database'
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 const fs = require('fs');
 const http = require('http');

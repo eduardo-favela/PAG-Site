@@ -15,5 +15,6 @@ router.post('/getCiudades', _contacto.getCiudades);
 router.post('/enviarCorreo', _contacto.enviarCorreo);
 router.post('/guardarContacto', _contacto.guardarContacto);
 router.post('/getUnidadesMedida', _contacto.getUnidadesMedida);
+router.post('/guardarContactoWpp', _contacto.guardarContactoWpp);
 var _default = router;
 exports["default"] = _default;

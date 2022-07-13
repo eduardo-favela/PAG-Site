@@ -28,5 +28,7 @@ export const getWppNumber = async (req, res) => {
             res.json([{ nombre_uen: 'LAGUNA', telefono: '8711319784' }])
         }
     }
-    res.json(uen);
+    else {
+        res.json(uen);
+    }
 }

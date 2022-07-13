@@ -3,11 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.guardarContacto = exports.getUnidadesMedida = exports.getSelectInfo = exports.getCiudades = exports.enviarCorreo = void 0;
+exports.guardarContactoWpp = exports.guardarContacto = exports.getUnidadesMedida = exports.getSelectInfo = exports.getCiudades = exports.enviarCorreo = void 0;
 
 var _database = require("../database");
 
 var _nodemailer = _interopRequireDefault(require("nodemailer"));
+
+var _axios = _interopRequireDefault(require("axios"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -209,10 +211,9 @@ var guardarContacto = /*#__PURE__*/function () {
 
 exports.guardarContacto = guardarContacto;
 
-var enviarCorreo = /*#__PURE__*/function () {
+var guardarContactoWpp = /*#__PURE__*/function () {
   var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(req, res) {
-    var db, _yield$db$query15, _yield$db$query16, result, transporter, mailDetails, info;
-
+    var db, result;
     return regeneratorRuntime.wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
@@ -223,60 +224,18 @@ var enviarCorreo = /*#__PURE__*/function () {
           case 2:
             db = _context5.sent;
             _context5.next = 5;
-            return db.query("SELECT CONCAT(nombre,' ',apellidos) AS nombre, contactos_web.telefono, contactos_web.email, \n    contactos_web.direccion, comentarios, empresa, estado, ciudad, producto, tipo_info,\n    nombre_uen, cantidad, unidades_de_medida.unidad_medida\n    FROM contactos_web\n    INNER JOIN estados ON contactos_web.estados_idestados=estados.idestados\n    INNER JOIN ciudades ON contactos_web.ciudades_id_ciudad=ciudades.id_ciudad\n    INNER JOIN productos ON contactos_web.productos_id_producto=productos.id_producto\n    INNER JOIN info_solicitada ON contactos_web.info_solicitada_id_info_solicitada=info_solicitada.id_info_solicitada\n    INNER JOIN uens ON contactos_web.uens_id_uen=uens.id_uen\n    INNER JOIN unidades_de_medida ON contactos_web.unidad_medida=unidades_de_medida.id_unidad_de_medida\n    WHERE id_contacto = ?;", req.body.contactId);
+            return db.query("INSERT INTO contactos_whatsapp (ciudad) VALUES ((select id_ciudad\n        from ciudades\n        inner join estados on ciudades.estados_idestados = estados.idestados\n        where ciudad like '%".concat(req.body.ciudad, "%' and estado like '%").concat(req.body.estado, "%'));"));
 
           case 5:
-            _yield$db$query15 = _context5.sent;
-            _yield$db$query16 = _slicedToArray(_yield$db$query15, 1);
-            result = _yield$db$query16[0];
+            result = _context5.sent;
 
-            if (!result) {
-              _context5.next = 14;
-              break;
+            if (result) {
+              res.json(true);
+            } else {
+              res.json(false);
             }
 
-            // create reusable transporter object using the default SMTP transport
-            transporter = _nodemailer["default"].createTransport({
-              host: "mail.alfagamma.com.mx",
-              port: 3535,
-              secure: false,
-              // use TLS
-              auth: {
-                user: "pag_web@alfagamma.com.mx",
-                pass: "nirqlk(2gor5"
-              },
-              tls: {
-                // do not fail on invalid certs
-                rejectUnauthorized: false
-              }
-            });
-            mailDetails = {
-              from: 'pag_web@alfagamma.com.mx',
-              to: ['eduardo-favela@outlook.com', 'r.elizondo@alfagamma.com.mx'],
-              subject: 'Reporte de servicio',
-              html: "\n        <head>\n            <style>\n            table, td, div, h1, p {font-family: \"Montserrat\", sans-serif;}\n            </style>\n        </head>\n        <body style=\"margin:0;padding:0;\">\n            <table role=\"presentation\"\n            style=\"width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff; \">\n            <tr>\n                <td align=\"center\" style=\"padding:0;\">\n                <table role=\"presentation\"\n                    style=\"width:500px;border-collapse:collapse;border:1px solid\n                    #cccccc;border-spacing:0;text-align:left;\">\n                    <tr>\n                    <td align=\"center\" style=\"padding:40px 0 30px 0;border-bottom:\n                        solid;border-bottom-width:0.5px;\">\n                        <img src=\"cid:PAG_Logo\"\n                        style=\"height:auto;display:block;width:450px\" />\n                    </td>\n                    </tr>\n                    <tr>\n                    <td style=\"padding:36px 30px 42px 30px;\">\n                        <table role=\"presentation\"\n                        style=\"width:100%;border-collapse:collapse;border:0;border-spacing:0;\">\n                        <tr>\n                            <td style=\"color:#153643;\">\n                            <h1 style=\"text-align:center;font-size:24px;font-weight:bolder;\">Formulario desde p\xE1gina web</h1>\n                            <hr>\n                            </td>\n                        </tr>\n                        <tr style=\"align-content: center;\">\n                            <td style=\"padding:0;\">\n                            <table role=\"presentation\">\n                                <tr>\n                                <th style=\"text-align: initial; width: 260px;padding: 5px; \n                                color: #153643;border-right-width: thin;\">\n                                    Informaci\xF3n solicitada\n                                </th>\n                                <td style=\"padding: 5px;\">\n                                    ".concat(result[0].tipo_info, "\n                                </td>\n                                </tr>\n                                <tr>\n                                <th style=\"text-align: initial; width: 260px;padding: 5px;border-right-color: black;\n                                    border-right-width: thin;\">\n                                    Producto\n                                </th>\n                                <td style=\"padding: 5px;\">\n                                    ").concat(result[0].producto, "\n                                </td>\n                                </tr>\n                                <tr>\n                                <th style=\"text-align: initial; width: 260px;padding: 5px;\n                                color:#153643; border-right-width: thin;\">\n                                    Cantidad aproximada\n                                </th>\n                                <td style=\"padding: 5px;\">\n                                    ").concat(result[0].cantidad, " ").concat(result[0].unidad_medida, "\n                                </td>\n                                </tr>\n                                <tr>\n                                <th style=\"text-align: initial; width: 260px;padding: 5px;border-right-color: black;\n                                    border-right-width: thin;\">\n                                    Nombre\n                                </th>\n                                <td style=\"padding: 5px;\">\n                                    ").concat(result[0].nombre, "\n                                </td>\n                                </tr>\n                                <tr>\n                                <th style=\"text-align: initial; width: 260px;padding: 5px;\n                                color:#153643; border-right-width: thin;\">\n                                    Tel\xE9fono\n                                </th>\n                                <td style=\"padding: 5px;\">\n                                    ").concat(result[0].telefono, "\n                                </td>\n                                </tr>\n                                <tr>\n                                <th style=\"text-align: initial; width: 260px;padding: 5px;border-right-color: black;\n                                    border-right-width: thin;\">\n                                    Empresa\n                                </th>\n                                <td style=\"padding: 5px;\">\n                                    ").concat(result[0].empresa, "\n                                </td>\n                                </tr>\n                                <tr>\n                                <th style=\"text-align: initial; width: 260px;padding: 5px;\n                                color:#153643; border-right-width: thin;\">\n                                    Correo\n                                </th>\n                                <td style=\"padding: 5px;\">\n                                    ").concat(result[0].email, "\n                                </td>\n                                </tr>\n                                <tr>\n                                <th style=\"text-align: initial; width: 260px;padding: 5px;border-right-color: black;\n                                    border-right-width: thin;\">\n                                    Ciudad\n                                </th>\n                                <td style=\"padding: 5px;\">\n                                    ").concat(result[0].ciudad, ", ").concat(result[0].estado, "\n                                </td>\n                                </tr>\n                                <tr>\n                                <th style=\"text-align: initial; width: 260px;padding: 5px;\n                                color:#153643; border-right-width: thin;\">\n                                    Sucursal\n                                </th>\n                                <td style=\"padding: 5px;\">\n                                    ").concat(result[0].nombre_uen, "\n                                </td>\n                                </tr>\n                                <tr>\n                                <th style=\"text-align: initial; width: 260px;padding: 5px;border-right-color: black;\n                                    border-right-width: thin;\">\n                                    Direcci\xF3n\n                                </th>\n                                <td style=\"padding: 5px;\">\n                                    ").concat(result[0].direccion, "\n                                </td>\n                                </tr>\n                                <tr>\n                                <th style=\"text-align: initial; width: 260px;padding: 5px;color:#153643;\n                                border-right-width: thin;\">\n                                    Comentarios\n                                </th>\n                                <td style=\"padding: 5px;\">\n                                    ").concat(result[0].comentarios, "\n                                </td>\n                                </tr>\n                            </table>\n                            </td>\n                        </tr>\n                        </table>\n                    </td>\n                    </tr>\n                    <tr>\n                        <td style=\"padding: 15px;border-bottom: solid;border-bottom-color: #d13138;border-top: solid;border-top-color: #d13138;text-align: center; border-top-width: 3px;border-bottom-width: 3px;\">\n                            <table role=\"presentation\" style=\"width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;\">\n                            <tbody><tr>\n                                <td style=\"padding:0;width:50%;text-align: center;\" align=\"left\">\n                                <p style=\"margin:0;font-size:14px;line-height:16px;font-family:'Montserrat',sans-serif;\">\n                                    Poliestireno Alfa Gamma, 2022<br><a target=\"_blank\" href=\"https://alfagamma.com.mx/\" style=\"text-decoration:underline;\">Visitar\n                                        p\xE1gina</a>\n                                    </p>\n                                </td>\n                                </tr>\n                            </tbody>\n                            </table>\n                            </td>\n                        </tr>\n                    </table>\n                </td>\n            </tr>\n            </table>\n            </body>"),
-              attachments: [{
-                filename: 'PAG.png',
-                path: "".concat(__dirname, "/../assets/PAG.png"),
-                cid: "PAG_Logo"
-              }]
-            }; // send mail with defined transport object
-
-            _context5.next = 13;
-            return transporter.sendMail(mailDetails, function (err, data) {
-              if (err) {
-                console.log('Error Occurs', err);
-                res.json(false);
-              } else {
-                console.log('Email sent successfully from ', mailDetails.to);
-                res.json(true);
-              }
-            });
-
-          case 13:
-            info = _context5.sent;
-
-          case 14:
+          case 7:
           case "end":
             return _context5.stop();
         }
@@ -284,8 +243,132 @@ var enviarCorreo = /*#__PURE__*/function () {
     }, _callee5);
   }));
 
-  return function enviarCorreo(_x9, _x10) {
+  return function guardarContactoWpp(_x9, _x10) {
     return _ref5.apply(this, arguments);
+  };
+}();
+
+exports.guardarContactoWpp = guardarContactoWpp;
+
+var enviarCorreo = /*#__PURE__*/function () {
+  var _ref6 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7(req, res) {
+    var url, data;
+    return regeneratorRuntime.wrap(function _callee7$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            url = 'https://www.google.com/recaptcha/api/siteverify';
+            data = {
+              secret: '6LdiF1AgAAAAAHDWPmX3uUYP5HNUyzhTdBNhhqDs',
+              response: req.body.token
+            };
+
+            _axios["default"].post(url + "?secret=".concat(data.secret, "&response=").concat(data.response)).then( /*#__PURE__*/function () {
+              var _ref7 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6(response) {
+                var db, _yield$db$query15, _yield$db$query16, result, transporter, mailDetails, info;
+
+                return regeneratorRuntime.wrap(function _callee6$(_context6) {
+                  while (1) {
+                    switch (_context6.prev = _context6.next) {
+                      case 0:
+                        if (!response.data.success) {
+                          _context6.next = 17;
+                          break;
+                        }
+
+                        _context6.next = 3;
+                        return (0, _database.connect)();
+
+                      case 3:
+                        db = _context6.sent;
+                        _context6.next = 6;
+                        return db.query("SELECT CONCAT(nombre,' ',apellidos) AS nombre, contactos_web.telefono, contactos_web.email, \n            contactos_web.direccion, comentarios, empresa, estado, ciudad, producto, tipo_info,\n            nombre_uen, cantidad, unidades_de_medida.unidad_medida, uens.email as emailuen\n            FROM contactos_web\n            INNER JOIN estados ON contactos_web.estados_idestados=estados.idestados\n            INNER JOIN ciudades ON contactos_web.ciudades_id_ciudad=ciudades.id_ciudad\n            INNER JOIN productos ON contactos_web.productos_id_producto=productos.id_producto\n            INNER JOIN info_solicitada ON contactos_web.info_solicitada_id_info_solicitada=info_solicitada.id_info_solicitada\n            INNER JOIN uens ON contactos_web.uens_id_uen=uens.id_uen\n            INNER JOIN unidades_de_medida ON contactos_web.unidad_medida=unidades_de_medida.id_unidad_de_medida\n            WHERE id_contacto = ?;", req.body.contactId);
+
+                      case 6:
+                        _yield$db$query15 = _context6.sent;
+                        _yield$db$query16 = _slicedToArray(_yield$db$query15, 1);
+                        result = _yield$db$query16[0];
+
+                        if (!result) {
+                          _context6.next = 15;
+                          break;
+                        }
+
+                        // create reusable transporter object using the default SMTP transport
+                        transporter = _nodemailer["default"].createTransport({
+                          host: "mail.alfagamma.com.mx",
+                          port: 3535,
+                          secure: false,
+                          // use TLS
+                          auth: {
+                            user: "pag_web@alfagamma.com.mx",
+                            pass: "nirqlk(2gor5"
+                            /* pass: "nirqlk(2gor5", */
+
+                          },
+                          tls: {
+                            // do not fail on invalid certs
+                            rejectUnauthorized: false
+                          }
+                        });
+                        mailDetails = {
+                          from: 'No-Reply <pag_web@alfagamma.com.mx>',
+                          to: ["coord.softweb@alfagamma.com.mx"],
+
+                          /* to: [`${result[0].emailuen}`], */
+                          subject: 'Formulario de contacto',
+                          html: "\n                <head>\n                    <style>\n                    table, td, div, h1, p {font-family: \"Montserrat\", sans-serif;}\n                    </style>\n                </head>\n                <body style=\"margin:0;padding:0;\">\n                    <table role=\"presentation\"\n                    style=\"width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff; \">\n                    <tr>\n                        <td align=\"center\" style=\"padding:0;\">\n                        <table role=\"presentation\"\n                            style=\"width:500px;border-collapse:collapse;border:1px solid\n                            #cccccc;border-spacing:0;text-align:left;\">\n                            <tr>\n                            <td align=\"center\" style=\"padding:40px 0 30px 0;border-bottom:\n                                solid;border-bottom-width:0.5px;\">\n                                <img src=\"cid:PAG_Logo\"\n                                style=\"height:auto;display:block;width:450px\" />\n                            </td>\n                            </tr>\n                            <tr>\n                            <td style=\"padding:36px 30px 42px 30px;\">\n                                <table role=\"presentation\"\n                                style=\"width:100%;border-collapse:collapse;border:0;border-spacing:0;\">\n                                <tr>\n                                    <td style=\"color:#153643;\">\n                                    <h1 style=\"text-align:center;font-size:24px;font-weight:bolder;\">Formulario desde p\xE1gina web</h1>\n                                    <hr>\n                                    </td>\n                                </tr>\n                                <tr style=\"align-content: center;\">\n                                    <td style=\"padding:0;\">\n                                    <table role=\"presentation\">\n                                        <tr>\n                                        <th style=\"text-align: initial; width: 260px;padding: 5px; \n                                        color: #153643;border-right-width: thin;\">\n                                            Informaci\xF3n solicitada\n                                        </th>\n                                        <td style=\"padding: 5px;\">\n                                            ".concat(result[0].tipo_info, "\n                                        </td>\n                                        </tr>\n                                        <tr>\n                                        <th style=\"text-align: initial; width: 260px;padding: 5px;border-right-color: black;\n                                            border-right-width: thin;\">\n                                            Producto\n                                        </th>\n                                        <td style=\"padding: 5px;\">\n                                            ").concat(result[0].producto, "\n                                        </td>\n                                        </tr>\n                                        <tr>\n                                        <th style=\"text-align: initial; width: 260px;padding: 5px;\n                                        color:#153643; border-right-width: thin;\">\n                                            Cantidad aproximada\n                                        </th>\n                                        <td style=\"padding: 5px;\">\n                                            ").concat(result[0].cantidad, " ").concat(result[0].unidad_medida, "\n                                        </td>\n                                        </tr>\n                                        <tr>\n                                        <th style=\"text-align: initial; width: 260px;padding: 5px;border-right-color: black;\n                                            border-right-width: thin;\">\n                                            Nombre\n                                        </th>\n                                        <td style=\"padding: 5px;\">\n                                            ").concat(result[0].nombre, "\n                                        </td>\n                                        </tr>\n                                        <tr>\n                                        <th style=\"text-align: initial; width: 260px;padding: 5px;\n                                        color:#153643; border-right-width: thin;\">\n                                            Tel\xE9fono\n                                        </th>\n                                        <td style=\"padding: 5px;\">\n                                            ").concat(result[0].telefono, "\n                                        </td>\n                                        </tr>\n                                        <tr>\n                                        <th style=\"text-align: initial; width: 260px;padding: 5px;border-right-color: black;\n                                            border-right-width: thin;\">\n                                            Empresa\n                                        </th>\n                                        <td style=\"padding: 5px;\">\n                                            ").concat(result[0].empresa, "\n                                        </td>\n                                        </tr>\n                                        <tr>\n                                        <th style=\"text-align: initial; width: 260px;padding: 5px;\n                                        color:#153643; border-right-width: thin;\">\n                                            Correo\n                                        </th>\n                                        <td style=\"padding: 5px;\">\n                                            ").concat(result[0].email, "\n                                        </td>\n                                        </tr>\n                                        <tr>\n                                        <th style=\"text-align: initial; width: 260px;padding: 5px;border-right-color: black;\n                                            border-right-width: thin;\">\n                                            Ciudad\n                                        </th>\n                                        <td style=\"padding: 5px;\">\n                                            ").concat(result[0].ciudad, ", ").concat(result[0].estado, "\n                                        </td>\n                                        </tr>\n                                        <tr>\n                                        <th style=\"text-align: initial; width: 260px;padding: 5px;\n                                        color:#153643; border-right-width: thin;\">\n                                            Sucursal\n                                        </th>\n                                        <td style=\"padding: 5px;\">\n                                            ").concat(result[0].nombre_uen, "\n                                        </td>\n                                        </tr>\n                                        <tr>\n                                        <th style=\"text-align: initial; width: 260px;padding: 5px;border-right-color: black;\n                                            border-right-width: thin;\">\n                                            Direcci\xF3n\n                                        </th>\n                                        <td style=\"padding: 5px;\">\n                                            ").concat(result[0].direccion, "\n                                        </td>\n                                        </tr>\n                                        <tr>\n                                        <th style=\"text-align: initial; width: 260px;padding: 5px;color:#153643;\n                                        border-right-width: thin;\">\n                                            Comentarios\n                                        </th>\n                                        <td style=\"padding: 5px;\">\n                                            ").concat(result[0].comentarios, "\n                                        </td>\n                                        </tr>\n                                    </table>\n                                    </td>\n                                </tr>\n                                </table>\n                            </td>\n                            </tr>\n                            <tr>\n                                <td style=\"padding: 15px;border-bottom: solid;border-bottom-color: #d13138;border-top: solid;border-top-color: #d13138;text-align: center; border-top-width: 3px;border-bottom-width: 3px;\">\n                                    <table role=\"presentation\" style=\"width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;\">\n                                    <tbody><tr>\n                                        <td style=\"padding:0;width:50%;text-align: center;\" align=\"left\">\n                                        <p style=\"margin:0;font-size:14px;line-height:16px;font-family:'Montserrat',sans-serif;\">\n                                            Poliestireno Alfa Gamma, 2022<br><a target=\"_blank\" href=\"https://alfagamma.com.mx/\" style=\"text-decoration:underline;\">Visitar\n                                                p\xE1gina</a>\n                                            </p>\n                                        </td>\n                                        </tr>\n                                    </tbody>\n                                    </table>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                    </table>\n                    </body>"),
+                          attachments: [{
+                            filename: 'PAG.png',
+                            path: "".concat(__dirname, "/../assets/PAG.png"),
+                            cid: "PAG_Logo"
+                          }]
+                        }; // send mail with defined transport object
+
+                        _context6.next = 14;
+                        return transporter.sendMail(mailDetails, function (err, data) {
+                          if (err) {
+                            console.log('Error Occurs', err);
+                            res.json(false);
+                          } else {
+                            console.log('Email sent successfully to ', mailDetails.to);
+                            res.json(true);
+                          }
+                        });
+
+                      case 14:
+                        info = _context6.sent;
+
+                      case 15:
+                        _context6.next = 18;
+                        break;
+
+                      case 17:
+                        res.json(false);
+
+                      case 18:
+                      case "end":
+                        return _context6.stop();
+                    }
+                  }
+                }, _callee6);
+              }));
+
+              return function (_x13) {
+                return _ref7.apply(this, arguments);
+              };
+            }());
+
+          case 3:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, _callee7);
+  }));
+
+  return function enviarCorreo(_x11, _x12) {
+    return _ref6.apply(this, arguments);
   };
 }();
 
