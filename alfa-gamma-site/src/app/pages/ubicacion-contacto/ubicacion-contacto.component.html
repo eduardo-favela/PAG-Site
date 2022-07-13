@@ -52,7 +52,8 @@
       <div class="col-12 md:col-8">
         <agm-map [style]="{'height':'80vh'}" [latitude]="mapOptions.lat" [longitude]="mapOptions.lng" [zoom]="mapOptions.zoom">
           <agm-marker *ngFor="let uen of uens" animation="DROP" iconUrl = "{{uen.icon}}"
-            title="{{uen.nombre_uen}}" [latitude]="uen.latitud" [longitude]="uen.longitud" (markerClick)="markerClickListener(uen)"></agm-marker>
+            title="{{uen.nombre_uen}}" [latitude]="uen.latitud" [longitude]="uen.longitud" (markerClick)="markerClickListener(uen)">
+          </agm-marker>
         </agm-map>
       </div>
       <div class="col-12 md:col-4">

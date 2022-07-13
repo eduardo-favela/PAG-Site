@@ -121,10 +121,10 @@ export class MenuComponent implements OnInit {
               }
             ]
           },
-          {
+/*           {
             label: 'Industria',
             styleClass: 'menuitem'
-            /* label: 'Aplicación especial',
+            label: 'Aplicación especial',
             styleClass: 'menuitem',
             items: [
               {
@@ -137,8 +137,8 @@ export class MenuComponent implements OnInit {
                 styleClass: 'menuitem',
                 routerLink: '/aplicacion-especial/moldeo'
               },
-            ] */
-          },
+            ]
+          }, */
           {
             label: 'Cadena Fría',
             styleClass: 'menuitem',
@@ -192,6 +192,12 @@ export class MenuComponent implements OnInit {
         label: 'BLOG',
         styleClass: 'menuitem',
         routerLink: '/blog'
+      },
+      {
+        label: 'PAG FOAM',
+        url: 'https://www.pagfoam.com/',
+        styleClass: 'menuitemPagFoam',
+        target: '_blank'
       }
     ];
   }

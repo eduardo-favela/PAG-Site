@@ -27,15 +27,15 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('galleria') galleria: Galleria;
 
-  responsiveOptions:any[] = [
-      {
-          breakpoint: '1024px',
-          numVisible: 5
-      },
-      {
-          breakpoint: '768px',
-          numVisible: 3
-      }
+  responsiveOptions: any[] = [
+    {
+      breakpoint: '1024px',
+      numVisible: 5
+    },
+    {
+      breakpoint: '768px',
+      numVisible: 3
+    }
   ];
 
   constructor() { }

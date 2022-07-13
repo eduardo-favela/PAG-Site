@@ -15,9 +15,22 @@
   src: url("../../../assets/css/fonts/Poppins-SemiBold.ttf");
 }
 
-::ng-deep .menuitem {
+::ng-deep .menuitemPagFoam a span {
   font-family: Karla-Variable;
-  color: #6f6f71;
+  color: #6f6f71 !important;
+  font-weight: bold;
+  margin: auto;
+}
+
+::ng-deep .menuitemPagFoam {
+  border: solid;
+  border-color: #d2313b;
+  border-radius: 0.5rem;
+}
+
+::ng-deep .menuitem a span {
+  font-family: Karla-Variable;
+  color: #6f6f71 !important;
   font-weight: bold;
   margin: auto;
 }

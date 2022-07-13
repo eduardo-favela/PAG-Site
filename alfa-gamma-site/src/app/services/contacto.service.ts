@@ -28,4 +28,8 @@ export class ContactoService {
   guardarContacto(contacto){
     return this.http.post(`${API_URI}/contacto/guardarContacto`,contacto)
   }
+
+  guardarContactoWpp(contacto){
+    return this.http.post(`${API_URI}/contacto/guardarContactoWpp`,contacto)
+  }
 }

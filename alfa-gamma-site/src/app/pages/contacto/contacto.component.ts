@@ -182,7 +182,7 @@ export class ContactoComponent implements OnInit {
   }
 
   saveContact(token) {
-    if (this.contacto.infoSolicitada && this.contacto.productoSelected && this.contacto.cantidad && this.contacto.nombre && this.contacto.apellidos && this.contacto.telefono && this.contacto.email && this.contacto.sucursal && this.contacto.estado && this.contacto.ciudad && this.contacto.direccion && this.contacto.comentarios && this.contacto.empresa) {
+    if (this.contacto.infoSolicitada && this.contacto.productoSelected && this.contacto.cantidad && this.contacto.nombre && this.contacto.apellidos && this.contacto.telefono && this.contacto.email && this.contacto.sucursal && this.contacto.estado && this.contacto.ciudad && this.contacto.direccion && this.contacto.comentarios && this.contacto.empresa && this.contacto.uMedida) {
       if (this.contacto.email.includes('@')) {
         if (this.contacto.telefono.toString().length == 10) {
           this.contactoService.guardarContacto(this.contacto).subscribe(
@@ -207,6 +207,7 @@ export class ContactoComponent implements OnInit {
     }
     else {
       this.loading = false;
+      this.displayDialogError = true
     }
   }
 

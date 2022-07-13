@@ -49,6 +49,20 @@ export const guardarContacto = async (req, res) => {
     res.json(result);
 }
 
+export const guardarContactoWpp = async (req, res) => {
+    const db = await connect();
+    const result = await db.query(`INSERT INTO contactos_whatsapp (ciudad) VALUES ((select id_ciudad
+        from ciudades
+        inner join estados on ciudades.estados_idestados = estados.idestados
+        where ciudad like '%${req.body.ciudad}%' and estado like '%${req.body.estado}%'));`);
+    if (result) {
+        res.json(true)
+    }
+    else {
+        res.json(false)
+    }
+}
+
 export const enviarCorreo = async (req, res) => {
 
     let url = 'https://www.google.com/recaptcha/api/siteverify';
@@ -71,9 +85,9 @@ export const enviarCorreo = async (req, res) => {
             INNER JOIN uens ON contactos_web.uens_id_uen=uens.id_uen
             INNER JOIN unidades_de_medida ON contactos_web.unidad_medida=unidades_de_medida.id_unidad_de_medida
             WHERE id_contacto = ?;`, req.body.contactId)
-        
+
             if (result) {
-        
+
                 // create reusable transporter object using the default SMTP transport
                 let transporter = nodemailer.createTransport({
                     host: "mail.alfagamma.com.mx",
@@ -89,7 +103,7 @@ export const enviarCorreo = async (req, res) => {
                         rejectUnauthorized: false,
                     },
                 });
-        
+
                 let mailDetails = {
                     from: 'No-Reply <pag_web@alfagamma.com.mx>',
                     to: [`coord.softweb@alfagamma.com.mx`],
@@ -260,7 +274,7 @@ export const enviarCorreo = async (req, res) => {
                         cid: `PAG_Logo`
                     }]
                 }
-        
+
                 // send mail with defined transport object
                 let info = await transporter.sendMail(mailDetails, function (err, data) {
                     if (err) {
