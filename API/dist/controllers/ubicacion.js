@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getWppNumber = exports.getUens = void 0;
+exports.getWppNumber = exports.getUensSelect = exports.getUens = void 0;
 
 var _database = require("../database");
 
@@ -37,7 +37,7 @@ var getUens = /*#__PURE__*/function () {
           case 2:
             db = _context.sent;
             _context.next = 5;
-            return db.query("SELECT id_uen, nombre_uen, direccion, telefono,\n    email, longitud, latitud, estado, ciudad, tipos_uen\n    FROM uens\n    INNER JOIN estados ON uens.estados_idestados=estados.idestados\n    INNER JOIN ciudades ON uens.ciudades_id_ciudad=ciudades.id_ciudad;");
+            return db.query("SELECT id_uen, nombre_uen, direccion, telefono,\n    email, longitud, latitud, estado, ciudad, tipos_uen\n    FROM uens\n    INNER JOIN ciudades ON uens.ciudades_id_ciudad=ciudades.id_ciudad\n    INNER JOIN estados ON ciudades.estados_idestados=estados.idestados;");
 
           case 5:
             _yield$db$query = _context.sent;
@@ -60,9 +60,9 @@ var getUens = /*#__PURE__*/function () {
 
 exports.getUens = getUens;
 
-var getWppNumber = /*#__PURE__*/function () {
+var getUensSelect = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(req, res) {
-    var db, _yield$db$query3, _yield$db$query4, uen, _yield$db$query5, _yield$db$query6;
+    var db, _yield$db$query3, _yield$db$query4, uens;
 
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
@@ -74,40 +74,15 @@ var getWppNumber = /*#__PURE__*/function () {
           case 2:
             db = _context2.sent;
             _context2.next = 5;
-            return db.query("SELECT nombre_uen, num_wpp as telefono FROM ciudades_has_uens\n    INNER JOIN ciudades on ciudades_has_uens.ciudad = ciudades.id_ciudad\n    INNER JOIN estados on ciudades.estados_idestados = estados.idestados\n    INNER JOIN uens on ciudades_has_uens.uen = uens.id_uen\n    WHERE estado like '%".concat(req.body.estado, "%' and ciudades.ciudad like '%").concat(req.body.ciudad, "%';"));
+            return db.query("SELECT id_uen, CONCAT(nombre_uen,' - (', ciudad,', ', estado,')') as uen\n    FROM uens\n    INNER JOIN ciudades ON uens.ciudades_id_ciudad=ciudades.id_ciudad\n    INNER JOIN estados ON ciudades.estados_idestados=estados.idestados;");
 
           case 5:
             _yield$db$query3 = _context2.sent;
             _yield$db$query4 = _slicedToArray(_yield$db$query3, 1);
-            uen = _yield$db$query4[0];
+            uens = _yield$db$query4[0];
+            res.json(uens);
 
-            if (!(uen.length === 0)) {
-              _context2.next = 17;
-              break;
-            }
-
-            _context2.next = 11;
-            return db.query("SELECT nombre_uen, num_wpp as telefono FROM estados_has_uens\n        INNER JOIN estados on estados_has_uens.estados_has_uens_estado = estados.idestados\n        INNER JOIN uens on estados_has_uens.estados_has_uens_uens = uens.id_uen WHERE estado like '%".concat(req.body.estado, "%';"));
-
-          case 11:
-            _yield$db$query5 = _context2.sent;
-            _yield$db$query6 = _slicedToArray(_yield$db$query5, 1);
-            uen = _yield$db$query6[0];
-
-            if (uen.length === 0) {
-              res.json([{
-                nombre_uen: 'LAGUNA',
-                telefono: '8711319784'
-              }]);
-            }
-
-            _context2.next = 18;
-            break;
-
-          case 17:
-            res.json(uen);
-
-          case 18:
+          case 9:
           case "end":
             return _context2.stop();
         }
@@ -115,8 +90,45 @@ var getWppNumber = /*#__PURE__*/function () {
     }, _callee2);
   }));
 
-  return function getWppNumber(_x3, _x4) {
+  return function getUensSelect(_x3, _x4) {
     return _ref2.apply(this, arguments);
+  };
+}();
+
+exports.getUensSelect = getUensSelect;
+
+var getWppNumber = /*#__PURE__*/function () {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(req, res) {
+    var db, _yield$db$query5, _yield$db$query6, uen;
+
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return (0, _database.connect)();
+
+          case 2:
+            db = _context3.sent;
+            _context3.next = 5;
+            return db.query("SELECT num_wpp as number FROM uens\n    WHERE id_uen = ?;", req.body.uen);
+
+          case 5:
+            _yield$db$query5 = _context3.sent;
+            _yield$db$query6 = _slicedToArray(_yield$db$query5, 1);
+            uen = _yield$db$query6[0];
+            res.json(uen);
+
+          case 9:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+
+  return function getWppNumber(_x5, _x6) {
+    return _ref3.apply(this, arguments);
   };
 }();
 

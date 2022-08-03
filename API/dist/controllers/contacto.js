@@ -224,7 +224,7 @@ var guardarContactoWpp = /*#__PURE__*/function () {
           case 2:
             db = _context5.sent;
             _context5.next = 5;
-            return db.query("INSERT INTO contactos_whatsapp (ciudad) VALUES ((select id_ciudad\n        from ciudades\n        inner join estados on ciudades.estados_idestados = estados.idestados\n        where ciudad like '%".concat(req.body.ciudad, "%' and estado like '%").concat(req.body.estado, "%'));"));
+            return db.query("INSERT INTO contactos_whatsapp (uen) VALUES (?);", [req.body.uen]);
 
           case 5:
             result = _context5.sent;

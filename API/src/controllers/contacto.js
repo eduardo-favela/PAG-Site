@@ -51,10 +51,7 @@ export const guardarContacto = async (req, res) => {
 
 export const guardarContactoWpp = async (req, res) => {
     const db = await connect();
-    const result = await db.query(`INSERT INTO contactos_whatsapp (ciudad) VALUES ((select id_ciudad
-        from ciudades
-        inner join estados on ciudades.estados_idestados = estados.idestados
-        where ciudad like '%${req.body.ciudad}%' and estado like '%${req.body.estado}%'));`);
+    const result = await db.query(`INSERT INTO contactos_whatsapp (uen) VALUES (?);`, [req.body.uen]);
     if (result) {
         res.json(true)
     }

@@ -6,8 +6,12 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,6 +23,10 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     ComponentsModule,
     PagesModule,
+    DialogModule,
+    DropdownModule,
+    ButtonModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],

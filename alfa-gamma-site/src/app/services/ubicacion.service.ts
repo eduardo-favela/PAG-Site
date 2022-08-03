@@ -23,6 +23,10 @@ export class UbicacionService {
     return this.http.get(`${API_URI}/ubicacion/getUens`)
   }
 
+  getUensSelect() {
+    return this.http.get(`${API_URI}/ubicacion/getUensSelect`)
+  }
+
   getPosition(): Promise<any> {
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(resp => {
