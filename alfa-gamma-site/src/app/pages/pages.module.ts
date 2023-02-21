@@ -116,7 +116,7 @@ import { AgriculturaComponent } from './productos/aplicacion-especial/agricultur
     ButtonModule,
     RecaptchaV3Module,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDTcZSY425cf0V5ykD2RKCJ4qyqS6xSJf4'
+      apiKey: 'AIzaSyBuDR_iqxsYTq0lVraFZgVSxVIgC3otmTs'
     }),
     TableModule,
     VirtualScrollerModule,
