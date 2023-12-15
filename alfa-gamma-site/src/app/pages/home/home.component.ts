@@ -14,12 +14,12 @@ export class HomeComponent implements OnInit {
 
   images: any[] = [
     {
-      previewImageSrc: "../../../assets/images/carousel/bannerInicio.jpg",
+      previewImageSrc: "../../../assets/images/carousel/bannerInicio.png",
       alt: "Construcción",
       title: "Construcción",
     },
     {
-      previewImageSrc: "../../../assets/images/carousel/industria.jpg",
+      previewImageSrc: "../../../assets/images/carousel/industria.png",
       alt: "Industria",
       title: "Industria",
     },
