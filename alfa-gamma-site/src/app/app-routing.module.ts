@@ -28,6 +28,7 @@ import { AlfatermComponent } from './pages/productos/aislantes/alfaterm/alfaterm
 import { MoldeoComponent } from './pages/productos/aplicacion-especial/moldeo/moldeo.component';
 import { AgriculturaComponent } from './pages/productos/aplicacion-especial/agricultura/agricultura.component';
 
+
 const routes: Routes = [
   {
     path: '',

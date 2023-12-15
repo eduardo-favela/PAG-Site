@@ -168,7 +168,7 @@
                 <textarea maxlength="60" [disabled]="loading" name="direccion"
                   id="textDireccion"
                   [(ngModel)]="contacto.direccion"
-                  rows="3" cols="30" pInputTextarea
+                  pInputTextarea
                   (ngModelChange)="direccionInput()"></textarea>
                 <label for="textDireccion">Dirección</label>
               </span>
@@ -178,7 +178,7 @@
                 <textarea [disabled]="loading" name="comentarios"
                   id="textComentarios"
                   [(ngModel)]="contacto.comentarios"
-                  rows="3" cols="30" pInputTextarea
+                  pInputTextarea
                   (ngModelChange)="comentariosInput()"></textarea>
                 <label for="textComentarios">Comentarios</label>
               </span>

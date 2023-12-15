@@ -124,11 +124,11 @@ import { AgriculturaComponent } from './productos/aplicacion-especial/agricultur
     DialogModule,
     MessageModule,
     MessagesModule,
-    ImageModule
+    ImageModule,
   ],
   exports: [
     HomeComponent,
-    CasetonComponent
+    CasetonComponent,
   ],
   providers: [
     {
