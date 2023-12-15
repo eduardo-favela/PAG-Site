@@ -38,7 +38,7 @@ export class UbicacionService {
     });
   }
 
-  geocode(latLng: google.maps.LatLng): Observable<google.maps.GeocoderResult[]> {
+  /* geocode(latLng: google.maps.LatLng): Observable<google.maps.GeocoderResult[]> {
     this.geocoder = new google.maps.Geocoder();
     return Observable.create((observer: Observer<google.maps.GeocoderResult[]>) => {
       // Invokes geocode method of Google Maps API geocoding.
@@ -54,7 +54,7 @@ export class UbicacionService {
         })
       );
     });
-  }
+  } */
 
   getWppNumber(ubicacion) {
     return this.http.post(`${API_URI}/ubicacion/getWppNumber`, ubicacion)

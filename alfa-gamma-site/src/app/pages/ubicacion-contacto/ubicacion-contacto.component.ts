@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
 import { UbicacionService } from '../../services/ubicacion.service';
 
 @Component({

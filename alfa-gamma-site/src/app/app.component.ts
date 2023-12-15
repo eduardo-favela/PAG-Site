@@ -34,7 +34,7 @@ export class AppComponent {
   }
 
   getPosition() {
-    this.ubicacionService.getPosition().then(pos => {
+    /* this.ubicacionService.getPosition().then(pos => {
       if (pos) {
         let Latlng = new google.maps.LatLng(parseFloat(pos.latitude), parseFloat(pos.longitude));
         this.ubicacionService.geocode(Latlng).subscribe(add => {
@@ -55,10 +55,7 @@ export class AppComponent {
           )
         })
       }
-      else {
-        /* alert('Para poder brindarle una atención más personalizada, es necesario conocer su ubicación') */
-      }
-    });
+    }); */
   }
 
   getPositionDialog() {

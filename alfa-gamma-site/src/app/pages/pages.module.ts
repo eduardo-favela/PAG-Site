@@ -12,7 +12,6 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
-import { AgmCoreModule } from '@agm/core';
 
 import { GalleriaModule } from 'primeng/galleria';
 import { SpeedDialModule } from 'primeng/speeddial';
@@ -115,9 +114,6 @@ import { AgriculturaComponent } from './productos/aplicacion-especial/agricultur
     InputTextareaModule,
     ButtonModule,
     RecaptchaV3Module,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBuDR_iqxsYTq0lVraFZgVSxVIgC3otmTs'
-    }),
     TableModule,
     VirtualScrollerModule,
     FieldsetModule,

@@ -4,11 +4,10 @@
   <div class="p-fluid grid">
     <div class="col-12 p-0">
 
-      <p-galleria [value]="images" [numVisible]="5" [responsiveOptions]="responsiveOptions"
-        [circular]="true" [showItemNavigators]="true" [showIndicatorsOnItem]="true"
-        [showThumbnails]="false" [showIndicators]="false" [showItemNavigatorsOnHover]="true"
-        [changeItemOnIndicatorHover]="true" indicatorsPosition="top" [autoPlay]="true" [transitionInterval]="5000"
-        [showIndicatorsOnItem]="true" [style]="{'min-height':'100vh'}">
+      <p-galleria [value]="images" [numVisible]="5" [responsiveOptions]="responsiveOptions" [circular]="true"
+        [showItemNavigators]="true" [showIndicatorsOnItem]="true" [showThumbnails]="false" [showIndicators]="false"
+        [showItemNavigatorsOnHover]="true" [changeItemOnIndicatorHover]="true" indicatorsPosition="top"
+        [autoPlay]="true" [transitionInterval]="5000" [showIndicatorsOnItem]="true" [style]="{'min-height':'100vh'}">
         <ng-template pTemplate="item" let-item>
           <div class="image-wrapper">
             <img [src]="item.previewImageSrc" style="width: 100%;  display: block;" />
@@ -19,7 +18,7 @@
         </ng-template>
       </p-galleria>
 
-<!--       <img [style]="{'width':'100%'}"
+      <!--       <img [style]="{'width':'100%'}"
         src="../../../assets/images/carousel/bannerInicio.jpg"
         alt="BannerInicio">
       <div class="col-6 bannerText">
@@ -29,7 +28,7 @@
   </div>
   <div class="row pt-8">
     <div class="p-fluid grid flex justify-content-center">
-      <div class="col-6 text-center">
+      <div class="col-6:sm-12 text-center">
         <p class="anteTituloBanner">ALFA-GAMMA UNA EMPRESA</p>
         <h1 class="titulo">Certificada</h1>
       </div>
@@ -38,40 +37,37 @@
   <div class="row pt-6">
     <div class="p-fluid grid flex justify-content-evenly">
       <div class="col-1 text-center">
-        <img class="certImg"
-          src="../../../assets/images/certificaciones/ico02.png" alt="UL">
+        <img class="certImg" src="../../../assets/images/certificaciones/ico02.png" alt="UL">
       </div>
       <div class="col-2 text-center">
-        <img class="certImg"
-          src="../../../assets/images/certificaciones/ico04.png" alt="ISO9001">
+        <img class="certImg" src="../../../assets/images/certificaciones/ico04.png" alt="ISO9001">
       </div>
       <div class="col-2 text-center">
-        <img class="certImg"
-          src="../../../assets/images/certificaciones/ico03.png" alt="ENERGY">
+        <img class="certImg" src="../../../assets/images/certificaciones/ico03.png" alt="ENERGY">
       </div>
     </div>
   </div>
   <div class="row pt-8">
     <div class="p-fluid grid">
-      <div class="col-12 image-wrapper">
-        <img [style]="{'width':'100%'}"
-          src="../../../assets/images/quienes-somos/quienes-somos.png"
-          alt="QuieneSomos">
-        <div class="col-6 bannerText2">
-          <p class="anteTituloBanner">Sobre nosotros</p>
-          <h1 class="tituloBanner">¿Quiénes somos?</h1>
-          <p class="contenidoBanner">Fundada el 23 de Octubre de 1991
-            Poliestireno Alfa Gamma es una empresa Mexicana dedicada a la
-            producción y distribución de termoplásticos de la más alta calidad y
-            con la mejor tecnología
-            con cobertura en todo México y California USA que cuenta con una
-            gran experiencia. Estamos presentes en diversos mercados de la
-            industria como lo son: construcción, industria manufacturera,
-            cadenas de alimentos, agricultura, electronica, entre otros. Su
-            facil manejo, ligeresa y propiedades aislantes termoacusticas lo
-            hace un producto versatil para todas y cada una de las necesidas del
-            mercado.</p>
-        </div>
+      <div class="col-12 text-center">
+        <p class="anteTituloBanner">Sobre nosotros</p>
+      </div>
+      <div class="col-12 md:col-6">
+        <img [style]="{'width':'100%'}" src="../../../assets/images/quienes-somos/quienes-somos.png" alt="QuieneSomos">
+      </div>
+      <div class="col-12 md:col-6">
+        <h1 class="tituloBanner text-center">¿Quiénes somos?</h1>
+        <p class="text-center">Fundada el 23 de Octubre de 1991
+          Poliestireno Alfa Gamma es una empresa Mexicana dedicada a la
+          producción y distribución de termoplásticos de la más alta calidad y
+          con la mejor tecnología
+          con cobertura en todo México y California USA que cuenta con una
+          gran experiencia. Estamos presentes en diversos mercados de la
+          industria como lo son: construcción, industria manufacturera,
+          cadenas de alimentos, agricultura, electronica, entre otros. Su
+          facil manejo, ligeresa y propiedades aislantes termoacusticas lo
+          hace un producto versatil para todas y cada una de las necesidas del
+          mercado.</p>
       </div>
     </div>
   </div>
@@ -82,9 +78,8 @@
   </div>
   <div class="row pt-5">
     <div class="p-fluid grid flex justify-content-evenly">
-      <div class="col-8 md:col-3">
-        <div class="row flex justify-content-center"
-          [style]="{'min-height':'165px'}">
+      <div class="col-12 md:col-3">
+        <div class="row flex justify-content-center" [style]="{'min-height':'165px'}">
           <div class="col-4 image-container">
             <img alt="Visión" src="../../../assets/images/empresa/vision.png">
           </div>
@@ -95,9 +90,8 @@
             calidad, rentabilidad y eficiencia en sus productos y servicios.</p>
         </p-card>
       </div>
-      <div class="col-8 md:col-3">
-        <div class="row flex justify-content-center"
-          [style]="{'min-height':'165px'}">
+      <div class="col-12 md:col-3">
+        <div class="row flex justify-content-center" [style]="{'min-height':'165px'}">
           <div class="col-4 image-container">
             <img alt="Misión" src="../../../assets/images/empresa/mision.png">
           </div>
@@ -110,9 +104,8 @@
             proveedores, medio ambiente y sociedad.</p>
         </p-card>
       </div>
-      <div class="col-8 md:col-3">
-        <div class="row flex justify-content-center"
-          [style]="{'min-height':'165px'}">
+      <div class="col-12 md:col-3">
+        <div class="row flex justify-content-center" [style]="{'min-height':'165px'}">
           <div class="col-4 image-container">
             <img alt="Valores" src="../../../assets/images/empresa/valores.png">
           </div>
@@ -120,12 +113,12 @@
         <p-card [style]="{'box-shadow':'none'}" class="text-center" header="V A
           L O R E S">
           <p>
-            Honestidad<br/>
-            Respeto<br/>
-            Tolerancia<br/>
-            Actitud de servicio<br/>
-            Trabajo en equipo<br/>
-            Creatividad<br/>
+            Honestidad<br />
+            Respeto<br />
+            Tolerancia<br />
+            Actitud de servicio<br />
+            Trabajo en equipo<br />
+            Creatividad<br />
           </p>
         </p-card>
       </div>
@@ -138,9 +131,9 @@
   </div>
 
   <div class="row pt-5 flex justify-content-center">
-    <div class="col-6">
+    <div class="col-12 md:col-6">
       <div class="row flex justify-content-center">
-        <div class="col-4 text-center">
+        <div class="col-12 text-center">
           <img alt="Valores" src="../../../assets/images/caracteristicas/15_garantia.png">
         </div>
       </div>
@@ -169,8 +162,7 @@
     </div>
     <div class="col-6 md:col-4 text-end">
       <video width="100%" autoplay [muted]="'muted'" loop>
-        <source src="../../../assets/video/video_home.mp4"
-          type="video/mp4">
+        <source src="../../../assets/video/video_home.mp4" type="video/mp4">
         Your browser does not support HTML video.
       </video>
     </div>
