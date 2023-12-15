@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { MenuComponent } from './menu/menu.component';
-import {MenubarModule} from 'primeng/menubar';
+import { MenubarModule } from 'primeng/menubar';
 import { TabViewModule } from 'primeng/tabview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
@@ -17,6 +17,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FieldsetModule } from 'primeng/fieldset';
 import { DialogModule } from 'primeng/dialog';
+import { MessagesModule } from 'primeng/messages';
+import { ToastModule } from 'primeng/toast'
 
 
 
@@ -41,7 +43,9 @@ import { DialogModule } from 'primeng/dialog';
     InputTextModule,
     InputTextareaModule,
     FieldsetModule,
-    DialogModule
+    DialogModule,
+    MessagesModule,
+    ToastModule
   ],
   exports: [
     MenuComponent,

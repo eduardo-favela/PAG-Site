@@ -1,4 +1,4 @@
-
+<p-toast></p-toast>
 <div class="row flex justify-content-center">
     <div class="col-12 md:col-4">
         <p-card header="" subheader="" [style]="{ width: '100%' }">
@@ -6,18 +6,17 @@
                 <img alt="Card" src="../../../assets/images/contacto/card-header.png" />
             </ng-template>
             <p>
-                Conecta con la Innovación en Termoplásticos: Estamos aquí para responder a tus necesidades. <b>¡Contactanos hoy mismo!</b>
+                Conecta con la Innovación en Termoplásticos: Estamos aquí para responder a tus necesidades.
+                <b>¡Contactanos hoy mismo!</b>
             </p>
-            
+
             <form #form="ngForm">
                 <div class="grid mt-5">
                     <div class="col-12 ">
                         <span class="p-float-label">
-                            <input [disabled]="loading" name="inputnombre" type="text"
-                              id="inputNombre"
-                              class="inputfield w-full"
-                              pInputText [(ngModel)]="contacto.nombre"
-                              (ngModelChange)="nombreInput()">
+                            <input [disabled]="loading" name="inputnombre" type="text" id="inputNombre"
+                                class="inputfield w-full" pInputText [(ngModel)]="contacto.nombre"
+                                (ngModelChange)="nombreInput()">
                             <label for="inputNombre">Nombre</label>
                         </span>
                     </div>
@@ -25,59 +24,45 @@
                 <div class="grid mt-3">
                     <div class="col-12">
                         <span class="p-float-label">
-                            <p-inputNumber [disabled]="loading" name="telefono"
-                              id="notelefono"
-                              class="inputfield w-full"
-                              styleClass="w-full"
-                              [(ngModel)]="contacto.telefono" mode="decimal"
-                              inputId="withoutgrouping" [useGrouping]="false"
-                              (ngModelChange)="telefonoInput()">
+                            <p-inputNumber [disabled]="loading" name="telefono" id="notelefono"
+                                class="inputfield w-full" styleClass="w-full" [(ngModel)]="contacto.telefono"
+                                mode="decimal" inputId="withoutgrouping" [useGrouping]="false"
+                                (ngModelChange)="telefonoInput()">
                             </p-inputNumber>
                             <label for="notelefono">Teléfono</label>
                         </span>
-                        
+
                     </div>
                 </div>
                 <div class="grid mt-3">
                     <div class="col-12">
                         <span class="p-float-label">
-                            <input [disabled]="loading" name="email" type="text"
-                              id="inputEmail"
-                              class="inputfield w-full"
-                              pInputText [(ngModel)]="contacto.email"
-                              
-                              (ngModelChange)="emailInput()">
+                            <input [disabled]="loading" name="email" type="text" id="inputEmail"
+                                class="inputfield w-full" pInputText [(ngModel)]="contacto.email"
+                                (ngModelChange)="emailInput()">
                             <label for="inputEmail">Correo electrónico</label>
                         </span>
-                        
+
                     </div>
                 </div>
                 <div class="grid mt-3">
                     <div class="col-12">
                         <span class="p-float-label">
-                            <p-dropdown [disabled]="loading" name="infoSolicitada"
-                              [autoDisplayFirst]="false"
-                              [options]="infoSoli" [(ngModel)]="contacto.infoSolicitada"
-                              optionLabel="field"
-                              styleClass="w-full"
-                              class="inputfield w-full"
-                              optionValue="id" id="infoSoliSelect"
-                              (onChange)="infoSelected()"></p-dropdown>
+                            <p-dropdown [disabled]="loading" name="infoSolicitada" [autoDisplayFirst]="false"
+                                [options]="infoSoli" [(ngModel)]="contacto.infoSolicitada" optionLabel="field"
+                                styleClass="w-full" class="inputfield w-full" optionValue="id" id="infoSoliSelect"
+                                (onChange)="infoSelected()"></p-dropdown>
                             <label for="infoSolicitada">Información solicitada</label>
                         </span>
-                        
+
                     </div>
                 </div>
                 <div class="grid mt-3">
                     <div class="col-12">
                         <span class="p-float-label">
-                            <textarea [disabled]="loading" name="comentarios"
-                              id="textComentarios"
-                              ngClass="w-full"
-                              class="inputfield w-full "
-                              [(ngModel)]="contacto.comentarios"
-                                pInputTextarea
-                              (ngModelChange)="comentariosInput()"></textarea>
+                            <textarea [disabled]="loading" name="comentarios" id="textComentarios" ngClass="w-full"
+                                class="inputfield w-full " [(ngModel)]="contacto.comentarios" pInputTextarea
+                                (ngModelChange)="comentariosInput()"></textarea>
                             <label for="textComentarios">Comentarios</label>
                         </span>
                     </div>
@@ -86,15 +71,12 @@
             <ng-template pTemplate="footer">
                 <div class="grid p-fluid">
                     <div class="col-12">
-                        <button  [disabled]="loading" pButton pRipple type="submit"
-                            label="Enviar"
-                            class="p-button-primary form-btn" icon="pi pi-send" iconPos="right"
-                            (click)="send(form)">
+                        <button [disabled]="loading" pButton pRipple type="submit" label="Enviar"
+                            class="p-button-primary form-btn" icon="pi pi-send" iconPos="right" (click)="send(form)">
                         </button>
                     </div>
                 </div>
             </ng-template>
         </p-card>
     </div>
-
 </div>

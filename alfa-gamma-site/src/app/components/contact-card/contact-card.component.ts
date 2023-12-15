@@ -4,14 +4,16 @@ import { ReCaptchaV3Service } from 'ng-recaptcha';
 import * as $ from 'jquery'
 
 import { ContactoService } from '../../services/contacto.service'
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-contact-card',
   templateUrl: './contact-card.component.html',
-  styleUrls: ['./contact-card.component.scss']
+  styleUrls: ['./contact-card.component.scss'],
+  providers: [MessageService]
 })
 export class ContactCardComponent implements OnInit {
-  
+
   infoSoli: any = [
     {
       field: 'Seleccione un tipo de información...',
@@ -65,28 +67,24 @@ export class ContactCardComponent implements OnInit {
 
   contactSavedId: any
 
-  displayPosition: boolean
-
-  displayDialogError: boolean
-
   contacto: any = {
     infoSolicitada: null,
-    productoSelected: null,
-    cantidad: null,
+    productoSelected: 1,
+    cantidad: 1,
     nombre: null,
-    apellidos: null,
+    apellidos: '',
     telefono: null,
     email: null,
-    sucursal: null,
-    estado: null,
-    ciudad: null,
-    direccion: null,
-    comentarios: null,
-    empresa: null,
-    uMedida: null
+    sucursal: 1,
+    estado: 1,
+    ciudad: 1,
+    direccion: '',
+    comentarios: '',
+    empresa: '',
+    uMedida: 1
   }
 
-  constructor(private recaptchaV3Service: ReCaptchaV3Service, private contactoService: ContactoService) { }
+  constructor(private recaptchaV3Service: ReCaptchaV3Service, private contactoService: ContactoService, private messageService: MessageService) { }
 
   public send(form: NgForm): void {
     this.loading = true;
@@ -99,7 +97,7 @@ export class ContactCardComponent implements OnInit {
 
     this.recaptchaV3Service.execute('importantAction')
       .subscribe((token: string) => {
-        /* console.log(this.contacto) */
+        console.log(this.contacto)
         if (!this.contacto.infoSolicitada) {
           $('#infoSoliSelect').addClass('ng-invalid ng-dirty')
         }
@@ -181,9 +179,10 @@ export class ContactCardComponent implements OnInit {
   }
 
   saveContact(token) {
-    if (this.contacto.infoSolicitada && this.contacto.productoSelected && this.contacto.cantidad && this.contacto.nombre && this.contacto.apellidos && this.contacto.telefono && this.contacto.email && this.contacto.sucursal && this.contacto.estado && this.contacto.ciudad && this.contacto.direccion && this.contacto.comentarios && this.contacto.empresa && this.contacto.uMedida) {
+    if (this.contacto.infoSolicitada && this.contacto.nombre && this.contacto.telefono && this.contacto.email && this.contacto.comentarios) {
       if (this.contacto.email.includes('@')) {
         if (this.contacto.telefono.toString().length == 10) {
+          console.log(this.contacto)
           this.contactoService.guardarContacto(this.contacto).subscribe(
             res => {
               this.contactSavedId = res
@@ -195,18 +194,18 @@ export class ContactCardComponent implements OnInit {
         else {
           this.loading = false;
           $('#notelefono').addClass('ng-invalid ng-dirty')
-          this.displayDialogError = true
+          this.showError()
         }
       }
       else {
         this.loading = false;
         $('#inputEmail').addClass('ng-invalid ng-dirty')
-        this.displayDialogError = true
+        this.showError()
       }
     }
     else {
       this.loading = false;
-      this.displayDialogError = true
+      this.showError()
     }
   }
 
@@ -236,11 +235,19 @@ export class ContactCardComponent implements OnInit {
           })
 
           this.loading = false;
-          this.displayPosition = true;
+          this.showSuccess();
         }
       },
       err => console.error(err)
     )
+  }
+
+  showSuccess() {
+    this.messageService.add({ severity: 'success', summary: 'Información enviada', detail: 'Pronto una persona se pondrá en contacto. ¡Gracias!' });
+  }
+
+  showError() {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Algunos campos son incorrectos' });
   }
 
   estadoSelected() {
